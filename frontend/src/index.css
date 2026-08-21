@@ -1,0 +1,8 @@
+/* Tailwind v4 does not need a config file, just this import. */
+@import "tailwindcss";
+
+html,
+body,
+#root {
+  height: 100%;
+}

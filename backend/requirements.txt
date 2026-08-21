@@ -1,0 +1,23 @@
+# JobMatch AI - backend dependencies (Python 3.10)
+
+# Web framework and server
+fastapi==0.141.1
+uvicorn[standard]==0.52.4
+
+# Settings and validation
+pydantic==2.13.4
+pydantic-settings==2.15.0
+python-dotenv==1.2.3
+
+# Database
+SQLAlchemy==2.0.52
+alembic==1.19.1
+PyMySQL==1.2.0
+# PyMySQL needs this for MySQL 8 caching_sha2_password logins
+cryptography==50.0.0
+
+# Authentication
+PyJWT==2.13.0
+passlib==1.7.4
+# passlib breaks with bcrypt 4.1 and newer, so it is held back here
+bcrypt==4.0.1

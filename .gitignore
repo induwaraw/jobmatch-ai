@@ -1,0 +1,30 @@
+# Python
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Environment files with credentials
+.env
+*.env.local
+
+# Node
+node_modules/
+dist/
+.vite/
+npm-debug.log*
+
+# Trained model artefacts
+*.pt
+*.h5
+*.pkl
+*.joblib
+
+# Scraped and generated data, keep the folder itself
+data/*
+!data/.gitkeep
+
+# Editor and OS noise
+.vscode/
+.idea/
+Thumbs.db

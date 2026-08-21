@@ -1,0 +1,33 @@
+# JobMatch AI - machine learning dependencies.
+#
+# These do not go into backend/.venv. Training happens in a separate
+# environment or in Google Colab, and only the results come back to the app.
+
+# Deep learning
+torch
+tensorflow
+
+# Natural language processing
+spacy
+transformers
+sentence-transformers
+nltk
+
+# Classic machine learning and data handling
+scikit-learn
+pandas
+numpy
+scipy
+
+# Time series forecasting for job market demand
+statsmodels
+prophet
+
+# CV text extraction
+pdfplumber
+python-docx
+
+# Notebooks and plotting
+jupyter
+matplotlib
+seaborn
