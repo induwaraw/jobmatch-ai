@@ -3,6 +3,8 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
+from app.api.routes import auth
+
 app = FastAPI(
     title="JobMatch AI API",
     description=(
@@ -22,6 +24,10 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+
+# The router carries its own /api/auth prefix
+app.include_router(auth.router)
 
 
 @app.get("/")

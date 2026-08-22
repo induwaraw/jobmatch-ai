@@ -1,7 +1,9 @@
 """Application configuration.
 
 Settings are read from backend/.env so no credentials end up in the repository.
-Nothing has a default, so a missing key fails at start up rather than later.
+The secrets have no default, so a missing key fails at start up rather than
+later. The token settings do have defaults, since they are tuning values and
+not secrets.
 """
 
 from pathlib import Path
@@ -22,6 +24,13 @@ class Settings(BaseSettings):
 
     # Secret used to sign JWT access tokens
     JWT_SECRET: str
+
+    # Signing algorithm for the access tokens
+    JWT_ALGORITHM: str = "HS256"
+
+    # How long an access token stays valid, in minutes. 60 minutes is long
+    # enough to work with comfortably and short enough to limit a leaked token.
+    ACCESS_TOKEN_EXPIRE_MINUTES: int = 60
 
     model_config = SettingsConfigDict(
         env_file=ENV_FILE,
