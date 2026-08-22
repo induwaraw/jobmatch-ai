@@ -2,7 +2,15 @@
 
 from datetime import datetime
 
-from sqlalchemy import DateTime, ForeignKey, Integer, String, func
+from sqlalchemy import (
+    Boolean,
+    DateTime,
+    ForeignKey,
+    Integer,
+    String,
+    UniqueConstraint,
+    func,
+)
 from sqlalchemy.dialects.mysql import LONGTEXT
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
@@ -22,7 +30,12 @@ SUBCATEGORIES = (
 
 class Job(Base):
     __tablename__ = "jobs"
-    __table_args__ = MYSQL_TABLE_ARGS
+    __table_args__ = (
+        # A job board's own id is what makes a listing unique, so re-running a
+        # scraper updates the existing row instead of adding a duplicate.
+        UniqueConstraint("source", "source_job_id", name="uq_jobs_source_job_id"),
+        MYSQL_TABLE_ARGS,
+    )
 
     id: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
 
@@ -43,8 +56,33 @@ class Job(Base):
     # Which job board the listing came from
     source: Mapped[str | None] = mapped_column(String(80), nullable=True, index=True)
 
+    # The id this listing has on that job board, kept as a string so any
+    # source's id format fits. Together with source it identifies the listing.
+    source_job_id: Mapped[str | None] = mapped_column(String(64), nullable=True, index=True)
+
     scraped_at: Mapped[datetime] = mapped_column(
         DateTime, nullable=False, server_default=func.now(), index=True
+    )
+
+    # When we first saw this listing. Set once on insert and never changed
+    # afterwards, so it records the real date the job entered our data.
+    first_seen: Mapped[datetime] = mapped_column(
+        DateTime, nullable=False, server_default=func.now(), index=True
+    )
+
+    # Refreshed every scrape run in which the listing is still present
+    last_seen: Mapped[datetime] = mapped_column(
+        DateTime, nullable=False, server_default=func.now(), index=True
+    )
+
+    # Closing date as stated by the source, null when the source does not give one
+    expiry_date: Mapped[datetime | None] = mapped_column(
+        DateTime, nullable=True, index=True
+    )
+
+    # A job counts as open until its stated expiry date has passed
+    is_active: Mapped[bool] = mapped_column(
+        Boolean, nullable=False, server_default="1", index=True
     )
 
     employer: Mapped["Employer | None"] = relationship(back_populates="jobs")

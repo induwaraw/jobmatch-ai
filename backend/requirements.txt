@@ -18,6 +18,9 @@ PyMySQL==1.2.0
 # PyMySQL needs this for MySQL 8 caching_sha2_password logins
 cryptography==50.0.0
 
+# Job scrapers
+requests==2.34.2
+
 # Authentication
 PyJWT==2.13.0
 passlib==1.7.4
