@@ -24,6 +24,12 @@ npm-debug.log*
 data/*
 !data/.gitkeep
 
+# Generated ML training data. prepare_classifier_data.py rebuilds it from the
+# Kaggle download, so the large CSV does not belong in git. The small
+# spot-check file is kept because it is used for reviewing label quality.
+ml/data/*.csv
+!ml/data/label_spotcheck.csv
+
 # Editor and OS noise
 .vscode/
 .idea/

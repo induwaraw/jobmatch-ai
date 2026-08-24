@@ -1,33 +1,16 @@
-# JobMatch AI - machine learning dependencies.
+# JobMatch AI - ML workspace dependencies (Python 3.10, ml/.venv).
 #
-# These do not go into backend/.venv. Training happens in a separate
-# environment or in Google Colab, and only the results come back to the app.
+# These are the light ones only, for data prep and classical models that run
+# on this machine. The heavy training libraries are Colab-only and are
+# deliberately NOT listed here: torch, tensorflow, transformers,
+# sentence-transformers, spacy, prophet. Do not install those locally, and
+# never into backend/.venv.
+#
+#   py -3.10 -m venv ml\.venv
+#   ml\.venv\Scripts\Activate.ps1
+#   pip install -r ml\requirements.txt
 
-# Deep learning
-torch
-tensorflow
-
-# Natural language processing
-spacy
-transformers
-sentence-transformers
-nltk
-
-# Classic machine learning and data handling
-scikit-learn
-pandas
-numpy
-scipy
-
-# Time series forecasting for job market demand
-statsmodels
-prophet
-
-# CV text extraction
-pdfplumber
-python-docx
-
-# Notebooks and plotting
-jupyter
-matplotlib
-seaborn
+pandas==2.3.3
+scikit-learn==1.7.2
+kaggle==1.7.4.5
+python-dotenv==1.2.3
