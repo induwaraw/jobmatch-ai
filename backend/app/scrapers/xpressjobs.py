@@ -27,12 +27,17 @@ from dataclasses import dataclass, field
 from datetime import datetime
 
 import requests
-from sqlalchemy import case, func, select, update
+from sqlalchemy import select
 from sqlalchemy.orm import Session
 
 from app.db.session import SessionLocal
-from app.models.employer import Employer
 from app.models.job import Job
+from app.scrapers.common import (
+    build_session,
+    is_job_active,
+    refresh_active_flags,
+    upsert_employer,
+)
 from app.scrapers.html_text import html_to_text
 
 logger = logging.getLogger(__name__)
@@ -56,11 +61,6 @@ SECTOR_NAMES = {
     30: "IT-SWare / Internet",
     134: "Quality Assurance",
 }
-
-USER_AGENT = (
-    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
-    "(KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
-)
 
 # Seconds to wait between requests so we do not hammer their API
 REQUEST_DELAY = 1.5
@@ -100,17 +100,10 @@ class ScrapeStats:
         return f"{self.unique_found}/{self.record_count} ({self.unique_found / self.record_count:.0%})"
 
 
-def build_session() -> requests.Session:
-    """A requests session with a normal browser User-Agent."""
-    session = requests.Session()
-    session.headers.update(
-        {
-            "User-Agent": USER_AGENT,
-            "Accept": "application/json, text/plain, */*",
-            "Accept-Language": "en-US,en;q=0.9",
-            "Referer": f"{SITE_URL}/",
-        }
-    )
+def build_api_session() -> requests.Session:
+    """Shared session settings plus the Referer their API expects."""
+    session = build_session()
+    session.headers["Referer"] = f"{SITE_URL}/"
     return session
 
 
@@ -223,23 +216,6 @@ def fetch_job_detail(
         return None
 
 
-def upsert_employer(db: Session, name: str | None, stats: ScrapeStats) -> Employer | None:
-    """Find an employer by name, creating it the first time we see it."""
-    clean_name = (name or "").strip()
-    if not clean_name:
-        return None
-
-    employer = db.scalar(select(Employer).where(Employer.name == clean_name))
-    if employer is None:
-        employer = Employer(name=clean_name)
-        db.add(employer)
-        # Flush so the new employer gets its id before the job references it
-        db.flush()
-        stats.employers_created += 1
-
-    return employer
-
-
 def parse_expiry(value: str | None) -> datetime | None:
     """Parse the API's ISO style date, returning None if it is missing."""
     if not value:
@@ -248,55 +224,6 @@ def parse_expiry(value: str | None) -> datetime | None:
         return datetime.fromisoformat(value)
     except ValueError:
         return None
-
-
-def start_of_today() -> datetime:
-    """Midnight this morning, used as the cutoff for the active rule."""
-    return datetime.now().replace(hour=0, minute=0, second=0, microsecond=0)
-
-
-def is_job_active(expiry_date: datetime | None) -> bool:
-    """Our rule for whether a job is still open.
-
-    A job counts as active until its stated closing date has passed, so a job
-    closing today is still active today. A job with no closing date is treated
-    as active, because the source has not told us otherwise and assuming it is
-    closed would silently drop real vacancies from the demand figures.
-    """
-    if expiry_date is None:
-        return True
-    return expiry_date >= start_of_today()
-
-
-def refresh_active_flags(db: Session) -> tuple[int, int]:
-    """Recompute is_active across every XpressJobs row, then report the split.
-
-    This runs after a scrape so that jobs which quietly passed their closing
-    date since the last run are marked inactive, even though this run did not
-    touch their rows.
-    """
-    cutoff = start_of_today()
-
-    db.execute(
-        update(Job)
-        .where(Job.source == SOURCE)
-        .values(
-            is_active=case(
-                (Job.expiry_date.is_(None), True),
-                (Job.expiry_date >= cutoff, True),
-                else_=False,
-            )
-        )
-    )
-    db.commit()
-
-    active = db.scalar(
-        select(func.count()).select_from(Job).where(Job.source == SOURCE, Job.is_active.is_(True))
-    )
-    expired = db.scalar(
-        select(func.count()).select_from(Job).where(Job.source == SOURCE, Job.is_active.is_(False))
-    )
-    return active or 0, expired or 0
 
 
 def upsert_job(
@@ -311,7 +238,9 @@ def upsert_job(
     source_job_id = str(job_id)
 
     title = (listing.get("jobTitle") or "").strip()
-    employer = upsert_employer(db, listing.get("organizationName"), stats)
+    employer, employer_created = upsert_employer(db, listing.get("organizationName"))
+    if employer_created:
+        stats.employers_created += 1
 
     # Prefer the real description, fall back to the short overview
     description = ""
@@ -406,7 +335,7 @@ def scrape_sector(
 def scrape(sectors: list[int] | None = None, limit: int | None = None) -> list[ScrapeStats]:
     """Scrape the given sectors. This is the function to call on a schedule."""
     sectors = sectors or list(SECTOR_SUBCATEGORY)
-    session = build_session()
+    session = build_api_session()
     results: list[ScrapeStats] = []
 
     db = SessionLocal()
@@ -414,7 +343,7 @@ def scrape(sectors: list[int] | None = None, limit: int | None = None) -> list[S
         for sector_id in sectors:
             results.append(scrape_sector(sector_id, db, session, limit=limit))
 
-        active, expired = refresh_active_flags(db)
+        active, expired = refresh_active_flags(db, SOURCE)
         logger.info("Active flags refreshed: %d active, %d expired", active, expired)
     finally:
         db.close()
