@@ -1,10 +1,14 @@
 # JobMatch AI - ML workspace dependencies (Python 3.10, ml/.venv).
 #
-# These are the light ones only, for data prep and classical models that run
-# on this machine. The heavy training libraries are Colab-only and are
-# deliberately NOT listed here: torch, tensorflow, transformers,
-# sentence-transformers, spacy, prophet. Do not install those locally, and
-# never into backend/.venv.
+# These are the light ones only, for data prep, skill extraction and classical
+# models that run on this machine. The heavy training libraries are Colab-only
+# and are deliberately NOT listed here: torch, tensorflow, transformers,
+# sentence-transformers, prophet. Do not install those locally, and never into
+# backend/.venv.
+#
+# spaCy is here because the skill extractor uses PhraseMatcher, which is rule
+# based and runs fine on a laptop. The en_core_web_sm model is a separate
+# download:  python -m spacy download en_core_web_sm
 #
 #   py -3.10 -m venv ml\.venv
 #   ml\.venv\Scripts\Activate.ps1
@@ -14,3 +18,4 @@ pandas==2.3.3
 scikit-learn==1.7.2
 kaggle==1.7.4.5
 python-dotenv==1.2.3
+spacy==3.8.16

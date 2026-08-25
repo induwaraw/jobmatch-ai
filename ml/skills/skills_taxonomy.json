@@ -1,0 +1,6119 @@
+{
+  "version": "1.0",
+  "created": "2026-08-25",
+  "description": "Curated IT skills taxonomy for JobMatch AI. Used by the spaCy PhraseMatcher to extract skills from CV and job description text. Matching is case-insensitive, so aliases are stored lowercase. Short ambiguous surface forms are deliberately excluded because they match ordinary English or, in the case of 'cv', appear in every resume: bare go, r, c, d, cv, ps, ad, dr, ha, ia, va. Note that the lowercase canonical name is therefore not always present in the aliases list.",
+  "subcategories": [
+    "Software Engineering",
+    "Data Science",
+    "Cyber Security",
+    "DevOps",
+    "QA",
+    "UI/UX",
+    "General/Tools"
+  ],
+  "skill_count": 582,
+  "skills": [
+    {
+      "name": ".NET",
+      "aliases": [
+        ".net",
+        "dotnet",
+        "dot net",
+        ".net framework"
+      ],
+      "subcategories": [
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": ".NET Core",
+      "aliases": [
+        ".net core",
+        "dotnet core",
+        "asp.net core",
+        "asp net core"
+      ],
+      "subcategories": [
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "A/B Testing",
+      "aliases": [
+        "a/b testing",
+        "ab testing",
+        "split testing"
+      ],
+      "subcategories": [
+        "Data Science",
+        "UI/UX"
+      ]
+    },
+    {
+      "name": "ABAP",
+      "aliases": [
+        "abap",
+        "sap abap"
+      ],
+      "subcategories": [
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "Access Control",
+      "aliases": [
+        "access control",
+        "rbac",
+        "role based access control"
+      ],
+      "subcategories": [
+        "Cyber Security"
+      ]
+    },
+    {
+      "name": "Accessibility",
+      "aliases": [
+        "accessibility",
+        "wcag",
+        "a11y",
+        "web accessibility"
+      ],
+      "subcategories": [
+        "UI/UX"
+      ]
+    },
+    {
+      "name": "Accessibility Testing",
+      "aliases": [
+        "accessibility testing",
+        "a11y testing"
+      ],
+      "subcategories": [
+        "QA",
+        "UI/UX"
+      ]
+    },
+    {
+      "name": "Active Directory",
+      "aliases": [
+        "active directory",
+        "azure ad",
+        "entra id"
+      ],
+      "subcategories": [
+        "Cyber Security",
+        "DevOps"
+      ]
+    },
+    {
+      "name": "ActiveMQ",
+      "aliases": [
+        "activemq",
+        "active mq"
+      ],
+      "subcategories": [
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "Adaptability",
+      "aliases": [
+        "adaptability",
+        "flexibility"
+      ],
+      "subcategories": [
+        "General/Tools"
+      ]
+    },
+    {
+      "name": "Adobe After Effects",
+      "aliases": [
+        "adobe after effects",
+        "after effects"
+      ],
+      "subcategories": [
+        "UI/UX"
+      ]
+    },
+    {
+      "name": "Adobe Illustrator",
+      "aliases": [
+        "adobe illustrator",
+        "illustrator",
+        "ai illustrator"
+      ],
+      "subcategories": [
+        "UI/UX"
+      ]
+    },
+    {
+      "name": "Adobe InDesign",
+      "aliases": [
+        "adobe indesign",
+        "indesign"
+      ],
+      "subcategories": [
+        "UI/UX"
+      ]
+    },
+    {
+      "name": "Adobe Photoshop",
+      "aliases": [
+        "adobe photoshop",
+        "photoshop"
+      ],
+      "subcategories": [
+        "UI/UX"
+      ]
+    },
+    {
+      "name": "Adobe XD",
+      "aliases": [
+        "adobe xd",
+        "adobe experience design",
+        "xd"
+      ],
+      "subcategories": [
+        "UI/UX"
+      ]
+    },
+    {
+      "name": "Agile",
+      "aliases": [
+        "agile",
+        "agile methodology",
+        "agile development"
+      ],
+      "subcategories": [
+        "General/Tools"
+      ]
+    },
+    {
+      "name": "Agile Testing",
+      "aliases": [
+        "agile testing"
+      ],
+      "subcategories": [
+        "QA"
+      ]
+    },
+    {
+      "name": "Aircrack-ng",
+      "aliases": [
+        "aircrack-ng",
+        "aircrack"
+      ],
+      "subcategories": [
+        "Cyber Security"
+      ]
+    },
+    {
+      "name": "AJAX",
+      "aliases": [
+        "ajax",
+        "asynchronous javascript"
+      ],
+      "subcategories": [
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "Algorithms",
+      "aliases": [
+        "algorithms",
+        "algorithm",
+        "algorithm design"
+      ],
+      "subcategories": [
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "Amazon CloudWatch",
+      "aliases": [
+        "amazon cloudwatch",
+        "cloudwatch"
+      ],
+      "subcategories": [
+        "DevOps"
+      ]
+    },
+    {
+      "name": "Amazon EC2",
+      "aliases": [
+        "amazon ec2",
+        "ec2"
+      ],
+      "subcategories": [
+        "DevOps"
+      ]
+    },
+    {
+      "name": "Amazon RDS",
+      "aliases": [
+        "amazon rds",
+        "rds"
+      ],
+      "subcategories": [
+        "DevOps"
+      ]
+    },
+    {
+      "name": "Amazon Redshift",
+      "aliases": [
+        "amazon redshift",
+        "redshift"
+      ],
+      "subcategories": [
+        "Data Science"
+      ]
+    },
+    {
+      "name": "Amazon S3",
+      "aliases": [
+        "amazon s3",
+        "s3",
+        "s3 bucket"
+      ],
+      "subcategories": [
+        "DevOps"
+      ]
+    },
+    {
+      "name": "Amazon Web Services",
+      "aliases": [
+        "amazon web services",
+        "aws",
+        "amazon aws"
+      ],
+      "subcategories": [
+        "DevOps"
+      ]
+    },
+    {
+      "name": "Analytical Skills",
+      "aliases": [
+        "analytical skills",
+        "analytical thinking"
+      ],
+      "subcategories": [
+        "General/Tools"
+      ]
+    },
+    {
+      "name": "Android Development",
+      "aliases": [
+        "android development",
+        "android",
+        "android sdk",
+        "android studio"
+      ],
+      "subcategories": [
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "Angular",
+      "aliases": [
+        "angular",
+        "angularjs",
+        "angular.js",
+        "angular js"
+      ],
+      "subcategories": [
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "Anomaly Detection",
+      "aliases": [
+        "anomaly detection",
+        "outlier detection"
+      ],
+      "subcategories": [
+        "Data Science",
+        "Cyber Security"
+      ]
+    },
+    {
+      "name": "Ansible",
+      "aliases": [
+        "ansible",
+        "ansible playbook"
+      ],
+      "subcategories": [
+        "DevOps"
+      ]
+    },
+    {
+      "name": "Apache Airflow",
+      "aliases": [
+        "apache airflow",
+        "airflow"
+      ],
+      "subcategories": [
+        "Data Science",
+        "DevOps"
+      ]
+    },
+    {
+      "name": "Apache Cordova",
+      "aliases": [
+        "apache cordova",
+        "cordova",
+        "phonegap"
+      ],
+      "subcategories": [
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "Apache Hive",
+      "aliases": [
+        "apache hive",
+        "hive"
+      ],
+      "subcategories": [
+        "Data Science"
+      ]
+    },
+    {
+      "name": "Apache HTTP Server",
+      "aliases": [
+        "apache http server",
+        "apache2",
+        "httpd",
+        "apache web server"
+      ],
+      "subcategories": [
+        "DevOps"
+      ]
+    },
+    {
+      "name": "Apache JMeter",
+      "aliases": [
+        "apache jmeter",
+        "jmeter"
+      ],
+      "subcategories": [
+        "QA"
+      ]
+    },
+    {
+      "name": "Apache Kafka",
+      "aliases": [
+        "apache kafka",
+        "kafka"
+      ],
+      "subcategories": [
+        "Software Engineering",
+        "DevOps",
+        "Data Science"
+      ]
+    },
+    {
+      "name": "Apache Spark",
+      "aliases": [
+        "apache spark",
+        "spark",
+        "pyspark"
+      ],
+      "subcategories": [
+        "Data Science",
+        "DevOps"
+      ]
+    },
+    {
+      "name": "Apache Tomcat",
+      "aliases": [
+        "apache tomcat",
+        "tomcat"
+      ],
+      "subcategories": [
+        "DevOps"
+      ]
+    },
+    {
+      "name": "API Gateway",
+      "aliases": [
+        "api gateway"
+      ],
+      "subcategories": [
+        "Software Engineering",
+        "DevOps"
+      ]
+    },
+    {
+      "name": "API Testing",
+      "aliases": [
+        "api testing"
+      ],
+      "subcategories": [
+        "QA"
+      ]
+    },
+    {
+      "name": "Appium",
+      "aliases": [
+        "appium"
+      ],
+      "subcategories": [
+        "QA"
+      ]
+    },
+    {
+      "name": "Application Security",
+      "aliases": [
+        "application security",
+        "appsec",
+        "secure sdlc"
+      ],
+      "subcategories": [
+        "Cyber Security"
+      ]
+    },
+    {
+      "name": "ArcSight",
+      "aliases": [
+        "arcsight",
+        "arc sight"
+      ],
+      "subcategories": [
+        "Cyber Security"
+      ]
+    },
+    {
+      "name": "ArgoCD",
+      "aliases": [
+        "argocd",
+        "argo cd"
+      ],
+      "subcategories": [
+        "DevOps"
+      ]
+    },
+    {
+      "name": "Asana",
+      "aliases": [
+        "asana"
+      ],
+      "subcategories": [
+        "General/Tools"
+      ]
+    },
+    {
+      "name": "ASP.NET",
+      "aliases": [
+        "asp.net",
+        "asp net",
+        "aspnet"
+      ],
+      "subcategories": [
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "Assembly Language",
+      "aliases": [
+        "assembly language",
+        "assembly",
+        "assembler"
+      ],
+      "subcategories": [
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "Atomic Design",
+      "aliases": [
+        "atomic design"
+      ],
+      "subcategories": [
+        "UI/UX"
+      ]
+    },
+    {
+      "name": "Attention to Detail",
+      "aliases": [
+        "attention to detail",
+        "detail oriented"
+      ],
+      "subcategories": [
+        "General/Tools"
+      ]
+    },
+    {
+      "name": "Automation Testing",
+      "aliases": [
+        "automation testing",
+        "test automation",
+        "automated testing",
+        "automation tester"
+      ],
+      "subcategories": [
+        "QA"
+      ]
+    },
+    {
+      "name": "AWS CloudFormation",
+      "aliases": [
+        "aws cloudformation",
+        "cloudformation"
+      ],
+      "subcategories": [
+        "DevOps"
+      ]
+    },
+    {
+      "name": "AWS Lambda",
+      "aliases": [
+        "aws lambda",
+        "lambda functions"
+      ],
+      "subcategories": [
+        "DevOps"
+      ]
+    },
+    {
+      "name": "Axure",
+      "aliases": [
+        "axure",
+        "axure rp"
+      ],
+      "subcategories": [
+        "UI/UX"
+      ]
+    },
+    {
+      "name": "Azure DevOps",
+      "aliases": [
+        "azure devops",
+        "vsts",
+        "tfs",
+        "azure pipelines"
+      ],
+      "subcategories": [
+        "DevOps"
+      ]
+    },
+    {
+      "name": "Azure Functions",
+      "aliases": [
+        "azure functions"
+      ],
+      "subcategories": [
+        "DevOps"
+      ]
+    },
+    {
+      "name": "Babel",
+      "aliases": [
+        "babel",
+        "babeljs"
+      ],
+      "subcategories": [
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "Backbone.js",
+      "aliases": [
+        "backbone.js",
+        "backbonejs",
+        "backbone js"
+      ],
+      "subcategories": [
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "Backlog Grooming",
+      "aliases": [
+        "backlog grooming",
+        "backlog refinement",
+        "product backlog"
+      ],
+      "subcategories": [
+        "General/Tools"
+      ]
+    },
+    {
+      "name": "Balsamiq",
+      "aliases": [
+        "balsamiq"
+      ],
+      "subcategories": [
+        "UI/UX"
+      ]
+    },
+    {
+      "name": "Bamboo",
+      "aliases": [
+        "bamboo",
+        "atlassian bamboo"
+      ],
+      "subcategories": [
+        "DevOps"
+      ]
+    },
+    {
+      "name": "Bash Scripting",
+      "aliases": [
+        "bash scripting",
+        "bash",
+        "shell scripting",
+        "shell script"
+      ],
+      "subcategories": [
+        "DevOps"
+      ]
+    },
+    {
+      "name": "Behavior-Driven Development",
+      "aliases": [
+        "behavior-driven development",
+        "bdd",
+        "behaviour driven development"
+      ],
+      "subcategories": [
+        "QA",
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "BERT",
+      "aliases": [
+        "bert",
+        "distilbert",
+        "roberta"
+      ],
+      "subcategories": [
+        "Data Science"
+      ]
+    },
+    {
+      "name": "Big Data",
+      "aliases": [
+        "big data",
+        "big-data"
+      ],
+      "subcategories": [
+        "Data Science"
+      ]
+    },
+    {
+      "name": "Bitbucket",
+      "aliases": [
+        "bitbucket",
+        "bit bucket"
+      ],
+      "subcategories": [
+        "Software Engineering",
+        "DevOps",
+        "General/Tools"
+      ]
+    },
+    {
+      "name": "Black Box Testing",
+      "aliases": [
+        "black box testing",
+        "blackbox testing"
+      ],
+      "subcategories": [
+        "QA"
+      ]
+    },
+    {
+      "name": "Blender",
+      "aliases": [
+        "blender",
+        "blender 3d"
+      ],
+      "subcategories": [
+        "UI/UX"
+      ]
+    },
+    {
+      "name": "Blue Teaming",
+      "aliases": [
+        "blue teaming",
+        "blue team"
+      ],
+      "subcategories": [
+        "Cyber Security"
+      ]
+    },
+    {
+      "name": "Blue-Green Deployment",
+      "aliases": [
+        "blue-green deployment",
+        "blue green deployment"
+      ],
+      "subcategories": [
+        "DevOps"
+      ]
+    },
+    {
+      "name": "Bootstrap",
+      "aliases": [
+        "bootstrap",
+        "bootstrap 5",
+        "twitter bootstrap"
+      ],
+      "subcategories": [
+        "Software Engineering",
+        "UI/UX"
+      ]
+    },
+    {
+      "name": "Branding",
+      "aliases": [
+        "branding",
+        "brand identity"
+      ],
+      "subcategories": [
+        "UI/UX"
+      ]
+    },
+    {
+      "name": "BrowserStack",
+      "aliases": [
+        "browserstack",
+        "browser stack"
+      ],
+      "subcategories": [
+        "QA"
+      ]
+    },
+    {
+      "name": "Bug Tracking",
+      "aliases": [
+        "bug tracking",
+        "defect tracking",
+        "defect management",
+        "bug reporting"
+      ],
+      "subcategories": [
+        "QA"
+      ]
+    },
+    {
+      "name": "Burp Suite",
+      "aliases": [
+        "burp suite",
+        "burpsuite",
+        "burp"
+      ],
+      "subcategories": [
+        "Cyber Security"
+      ]
+    },
+    {
+      "name": "Business Intelligence",
+      "aliases": [
+        "business intelligence",
+        "bi",
+        "bi reporting"
+      ],
+      "subcategories": [
+        "Data Science"
+      ]
+    },
+    {
+      "name": "C Programming",
+      "aliases": [
+        "c programming",
+        "c language",
+        "ansi c",
+        "c programming language"
+      ],
+      "subcategories": [
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "C#",
+      "aliases": [
+        "c#",
+        "csharp",
+        "c sharp"
+      ],
+      "subcategories": [
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "C++",
+      "aliases": [
+        "c++",
+        "cpp",
+        "c plus plus"
+      ],
+      "subcategories": [
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "Caching",
+      "aliases": [
+        "caching",
+        "cache",
+        "caching strategies"
+      ],
+      "subcategories": [
+        "Software Engineering",
+        "DevOps"
+      ]
+    },
+    {
+      "name": "CakePHP",
+      "aliases": [
+        "cakephp",
+        "cake php"
+      ],
+      "subcategories": [
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "Canary Deployment",
+      "aliases": [
+        "canary deployment",
+        "canary release"
+      ],
+      "subcategories": [
+        "DevOps"
+      ]
+    },
+    {
+      "name": "Canva",
+      "aliases": [
+        "canva"
+      ],
+      "subcategories": [
+        "UI/UX"
+      ]
+    },
+    {
+      "name": "Card Sorting",
+      "aliases": [
+        "card sorting"
+      ],
+      "subcategories": [
+        "UI/UX"
+      ]
+    },
+    {
+      "name": "Cassandra",
+      "aliases": [
+        "cassandra",
+        "apache cassandra"
+      ],
+      "subcategories": [
+        "Software Engineering",
+        "Data Science"
+      ]
+    },
+    {
+      "name": "CatBoost",
+      "aliases": [
+        "catboost",
+        "cat boost"
+      ],
+      "subcategories": [
+        "Data Science"
+      ]
+    },
+    {
+      "name": "CEH",
+      "aliases": [
+        "ceh",
+        "certified ethical hacker"
+      ],
+      "subcategories": [
+        "Cyber Security"
+      ]
+    },
+    {
+      "name": "CentOS",
+      "aliases": [
+        "centos",
+        "cent os"
+      ],
+      "subcategories": [
+        "DevOps"
+      ]
+    },
+    {
+      "name": "Chef",
+      "aliases": [
+        "chef",
+        "chef infra"
+      ],
+      "subcategories": [
+        "DevOps"
+      ]
+    },
+    {
+      "name": "CI/CD",
+      "aliases": [
+        "ci/cd",
+        "ci cd",
+        "cicd",
+        "continuous integration",
+        "continuous deployment",
+        "continuous delivery"
+      ],
+      "subcategories": [
+        "DevOps"
+      ]
+    },
+    {
+      "name": "CircleCI",
+      "aliases": [
+        "circleci",
+        "circle ci"
+      ],
+      "subcategories": [
+        "DevOps"
+      ]
+    },
+    {
+      "name": "CISA",
+      "aliases": [
+        "cisa",
+        "certified information systems auditor"
+      ],
+      "subcategories": [
+        "Cyber Security"
+      ]
+    },
+    {
+      "name": "CISM",
+      "aliases": [
+        "cism"
+      ],
+      "subcategories": [
+        "Cyber Security"
+      ]
+    },
+    {
+      "name": "CISSP",
+      "aliases": [
+        "cissp"
+      ],
+      "subcategories": [
+        "Cyber Security"
+      ]
+    },
+    {
+      "name": "Classification",
+      "aliases": [
+        "classification",
+        "classification models"
+      ],
+      "subcategories": [
+        "Data Science"
+      ]
+    },
+    {
+      "name": "Clean Architecture",
+      "aliases": [
+        "clean architecture"
+      ],
+      "subcategories": [
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "Client Communication",
+      "aliases": [
+        "client communication",
+        "client management",
+        "customer facing"
+      ],
+      "subcategories": [
+        "General/Tools"
+      ]
+    },
+    {
+      "name": "Clojure",
+      "aliases": [
+        "clojure"
+      ],
+      "subcategories": [
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "Cloud Security",
+      "aliases": [
+        "cloud security",
+        "cloud security posture"
+      ],
+      "subcategories": [
+        "Cyber Security",
+        "DevOps"
+      ]
+    },
+    {
+      "name": "Clustering",
+      "aliases": [
+        "clustering",
+        "k-means",
+        "kmeans",
+        "k means"
+      ],
+      "subcategories": [
+        "Data Science"
+      ]
+    },
+    {
+      "name": "COBOL",
+      "aliases": [
+        "cobol"
+      ],
+      "subcategories": [
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "Code Review",
+      "aliases": [
+        "code review",
+        "peer review",
+        "code reviews"
+      ],
+      "subcategories": [
+        "Software Engineering",
+        "General/Tools"
+      ]
+    },
+    {
+      "name": "CodeIgniter",
+      "aliases": [
+        "codeigniter",
+        "code igniter"
+      ],
+      "subcategories": [
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "Color Theory",
+      "aliases": [
+        "color theory",
+        "colour theory"
+      ],
+      "subcategories": [
+        "UI/UX"
+      ]
+    },
+    {
+      "name": "Communication Skills",
+      "aliases": [
+        "communication skills",
+        "communication",
+        "verbal communication",
+        "written communication"
+      ],
+      "subcategories": [
+        "General/Tools"
+      ]
+    },
+    {
+      "name": "Compliance",
+      "aliases": [
+        "regulatory compliance",
+        "compliance management",
+        "compliance monitoring"
+      ],
+      "subcategories": [
+        "Cyber Security",
+        "General/Tools"
+      ]
+    },
+    {
+      "name": "CompTIA Security+",
+      "aliases": [
+        "comptia security+",
+        "security plus",
+        "comptia security"
+      ],
+      "subcategories": [
+        "Cyber Security"
+      ]
+    },
+    {
+      "name": "Computer Vision",
+      "aliases": [
+        "computer vision",
+        "image processing",
+        "image recognition"
+      ],
+      "subcategories": [
+        "Data Science"
+      ]
+    },
+    {
+      "name": "Configuration Management",
+      "aliases": [
+        "configuration management",
+        "config management"
+      ],
+      "subcategories": [
+        "DevOps"
+      ]
+    },
+    {
+      "name": "Confluence",
+      "aliases": [
+        "confluence",
+        "atlassian confluence"
+      ],
+      "subcategories": [
+        "General/Tools"
+      ]
+    },
+    {
+      "name": "Consul",
+      "aliases": [
+        "consul",
+        "hashicorp consul"
+      ],
+      "subcategories": [
+        "DevOps"
+      ]
+    },
+    {
+      "name": "Container Orchestration",
+      "aliases": [
+        "container orchestration",
+        "orchestration"
+      ],
+      "subcategories": [
+        "DevOps"
+      ]
+    },
+    {
+      "name": "Continuous Learning",
+      "aliases": [
+        "continuous learning",
+        "self learning",
+        "self-motivated"
+      ],
+      "subcategories": [
+        "General/Tools"
+      ]
+    },
+    {
+      "name": "CorelDRAW",
+      "aliases": [
+        "coreldraw",
+        "corel draw"
+      ],
+      "subcategories": [
+        "UI/UX"
+      ]
+    },
+    {
+      "name": "CouchDB",
+      "aliases": [
+        "couchdb",
+        "couch db"
+      ],
+      "subcategories": [
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "Creativity",
+      "aliases": [
+        "creativity",
+        "creative thinking"
+      ],
+      "subcategories": [
+        "General/Tools"
+      ]
+    },
+    {
+      "name": "Critical Thinking",
+      "aliases": [
+        "critical thinking"
+      ],
+      "subcategories": [
+        "General/Tools"
+      ]
+    },
+    {
+      "name": "Cron",
+      "aliases": [
+        "cron",
+        "cron jobs",
+        "crontab"
+      ],
+      "subcategories": [
+        "DevOps"
+      ]
+    },
+    {
+      "name": "Cross-Browser Testing",
+      "aliases": [
+        "cross-browser testing",
+        "cross browser testing",
+        "browser compatibility"
+      ],
+      "subcategories": [
+        "QA"
+      ]
+    },
+    {
+      "name": "Cross-Site Scripting",
+      "aliases": [
+        "cross-site scripting",
+        "xss",
+        "cross site scripting"
+      ],
+      "subcategories": [
+        "Cyber Security"
+      ]
+    },
+    {
+      "name": "Cryptography",
+      "aliases": [
+        "cryptography",
+        "crypto",
+        "encryption",
+        "cryptographic"
+      ],
+      "subcategories": [
+        "Cyber Security"
+      ]
+    },
+    {
+      "name": "CSRF",
+      "aliases": [
+        "csrf",
+        "cross site request forgery"
+      ],
+      "subcategories": [
+        "Cyber Security"
+      ]
+    },
+    {
+      "name": "CSS",
+      "aliases": [
+        "css",
+        "css3",
+        "cascading style sheets"
+      ],
+      "subcategories": [
+        "Software Engineering",
+        "UI/UX"
+      ]
+    },
+    {
+      "name": "Cucumber",
+      "aliases": [
+        "cucumber",
+        "gherkin"
+      ],
+      "subcategories": [
+        "QA"
+      ]
+    },
+    {
+      "name": "Customer Service",
+      "aliases": [
+        "customer service",
+        "customer support"
+      ],
+      "subcategories": [
+        "General/Tools"
+      ]
+    },
+    {
+      "name": "Cypress",
+      "aliases": [
+        "cypress",
+        "cypress.io"
+      ],
+      "subcategories": [
+        "QA"
+      ]
+    },
+    {
+      "name": "Daily Standup",
+      "aliases": [
+        "daily standup",
+        "stand up meeting",
+        "daily scrum"
+      ],
+      "subcategories": [
+        "General/Tools"
+      ]
+    },
+    {
+      "name": "Dart",
+      "aliases": [
+        "dart"
+      ],
+      "subcategories": [
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "Dashboard Development",
+      "aliases": [
+        "dashboard development",
+        "dashboards",
+        "dashboard design"
+      ],
+      "subcategories": [
+        "Data Science",
+        "UI/UX"
+      ]
+    },
+    {
+      "name": "Data Analysis",
+      "aliases": [
+        "data analysis",
+        "data analytics",
+        "exploratory data analysis",
+        "eda"
+      ],
+      "subcategories": [
+        "Data Science"
+      ]
+    },
+    {
+      "name": "Data Cleaning",
+      "aliases": [
+        "data cleaning",
+        "data cleansing",
+        "data preprocessing",
+        "data preparation"
+      ],
+      "subcategories": [
+        "Data Science"
+      ]
+    },
+    {
+      "name": "Data Loss Prevention",
+      "aliases": [
+        "data loss prevention",
+        "dlp"
+      ],
+      "subcategories": [
+        "Cyber Security"
+      ]
+    },
+    {
+      "name": "Data Mining",
+      "aliases": [
+        "data mining"
+      ],
+      "subcategories": [
+        "Data Science"
+      ]
+    },
+    {
+      "name": "Data Modeling",
+      "aliases": [
+        "data modeling",
+        "dimensional modeling",
+        "star schema"
+      ],
+      "subcategories": [
+        "Data Science"
+      ]
+    },
+    {
+      "name": "Data Pipeline",
+      "aliases": [
+        "data pipeline",
+        "data pipelines",
+        "data engineering"
+      ],
+      "subcategories": [
+        "Data Science",
+        "DevOps"
+      ]
+    },
+    {
+      "name": "Data Structures",
+      "aliases": [
+        "data structures",
+        "data structure"
+      ],
+      "subcategories": [
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "Data Visualization",
+      "aliases": [
+        "data visualization",
+        "data visualisation",
+        "visualization"
+      ],
+      "subcategories": [
+        "Data Science",
+        "UI/UX"
+      ]
+    },
+    {
+      "name": "Data Warehouse",
+      "aliases": [
+        "data warehouse",
+        "data warehousing",
+        "dwh"
+      ],
+      "subcategories": [
+        "Data Science"
+      ]
+    },
+    {
+      "name": "Data Wrangling",
+      "aliases": [
+        "data wrangling",
+        "data munging"
+      ],
+      "subcategories": [
+        "Data Science"
+      ]
+    },
+    {
+      "name": "Database Administration",
+      "aliases": [
+        "database administration",
+        "dba",
+        "database admin"
+      ],
+      "subcategories": [
+        "Software Engineering",
+        "DevOps"
+      ]
+    },
+    {
+      "name": "Database Design",
+      "aliases": [
+        "database design",
+        "database modelling",
+        "database modeling",
+        "schema design"
+      ],
+      "subcategories": [
+        "Software Engineering",
+        "Data Science"
+      ]
+    },
+    {
+      "name": "Database Normalization",
+      "aliases": [
+        "database normalization",
+        "normalization",
+        "normalisation"
+      ],
+      "subcategories": [
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "Databricks",
+      "aliases": [
+        "databricks",
+        "data bricks"
+      ],
+      "subcategories": [
+        "Data Science"
+      ]
+    },
+    {
+      "name": "Datadog",
+      "aliases": [
+        "datadog",
+        "data dog"
+      ],
+      "subcategories": [
+        "DevOps"
+      ]
+    },
+    {
+      "name": "dbt",
+      "aliases": [
+        "dbt",
+        "data build tool"
+      ],
+      "subcategories": [
+        "Data Science"
+      ]
+    },
+    {
+      "name": "DDoS Mitigation",
+      "aliases": [
+        "ddos mitigation",
+        "ddos",
+        "denial of service"
+      ],
+      "subcategories": [
+        "Cyber Security"
+      ]
+    },
+    {
+      "name": "Debian",
+      "aliases": [
+        "debian"
+      ],
+      "subcategories": [
+        "DevOps"
+      ]
+    },
+    {
+      "name": "Debugging",
+      "aliases": [
+        "debugging",
+        "troubleshooting"
+      ],
+      "subcategories": [
+        "Software Engineering",
+        "General/Tools"
+      ]
+    },
+    {
+      "name": "Decision Making",
+      "aliases": [
+        "decision making"
+      ],
+      "subcategories": [
+        "General/Tools"
+      ]
+    },
+    {
+      "name": "Decision Trees",
+      "aliases": [
+        "decision trees",
+        "decision tree"
+      ],
+      "subcategories": [
+        "Data Science"
+      ]
+    },
+    {
+      "name": "Deep Learning",
+      "aliases": [
+        "deep learning",
+        "deep-learning"
+      ],
+      "subcategories": [
+        "Data Science"
+      ]
+    },
+    {
+      "name": "Delphi",
+      "aliases": [
+        "delphi"
+      ],
+      "subcategories": [
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "Design Handoff",
+      "aliases": [
+        "design handoff",
+        "developer handoff"
+      ],
+      "subcategories": [
+        "UI/UX"
+      ]
+    },
+    {
+      "name": "Design Patterns",
+      "aliases": [
+        "design patterns",
+        "design pattern",
+        "gof patterns"
+      ],
+      "subcategories": [
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "Design Systems",
+      "aliases": [
+        "design systems",
+        "design system",
+        "component library"
+      ],
+      "subcategories": [
+        "UI/UX"
+      ]
+    },
+    {
+      "name": "Design Thinking",
+      "aliases": [
+        "design thinking"
+      ],
+      "subcategories": [
+        "UI/UX",
+        "General/Tools"
+      ]
+    },
+    {
+      "name": "DevSecOps",
+      "aliases": [
+        "devsecops",
+        "dev sec ops"
+      ],
+      "subcategories": [
+        "Cyber Security",
+        "DevOps"
+      ]
+    },
+    {
+      "name": "Digital Forensics",
+      "aliases": [
+        "digital forensics",
+        "computer forensics",
+        "forensic analysis"
+      ],
+      "subcategories": [
+        "Cyber Security"
+      ]
+    },
+    {
+      "name": "DigitalOcean",
+      "aliases": [
+        "digitalocean",
+        "digital ocean"
+      ],
+      "subcategories": [
+        "DevOps"
+      ]
+    },
+    {
+      "name": "Dimensionality Reduction",
+      "aliases": [
+        "dimensionality reduction",
+        "pca",
+        "principal component analysis"
+      ],
+      "subcategories": [
+        "Data Science"
+      ]
+    },
+    {
+      "name": "Disaster Recovery",
+      "aliases": [
+        "disaster recovery",
+        "backup and recovery"
+      ],
+      "subcategories": [
+        "DevOps"
+      ]
+    },
+    {
+      "name": "Django",
+      "aliases": [
+        "django",
+        "django rest framework",
+        "drf"
+      ],
+      "subcategories": [
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "DNS",
+      "aliases": [
+        "dns",
+        "domain name system"
+      ],
+      "subcategories": [
+        "DevOps"
+      ]
+    },
+    {
+      "name": "Docker",
+      "aliases": [
+        "docker",
+        "dockerfile",
+        "docker compose",
+        "containerization"
+      ],
+      "subcategories": [
+        "DevOps"
+      ]
+    },
+    {
+      "name": "DOM Manipulation",
+      "aliases": [
+        "dom manipulation",
+        "dom"
+      ],
+      "subcategories": [
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "Domain-Driven Design",
+      "aliases": [
+        "domain-driven design",
+        "ddd",
+        "domain driven design"
+      ],
+      "subcategories": [
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "Drupal",
+      "aliases": [
+        "drupal"
+      ],
+      "subcategories": [
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "DynamoDB",
+      "aliases": [
+        "dynamodb",
+        "dynamo db"
+      ],
+      "subcategories": [
+        "Software Engineering",
+        "DevOps"
+      ]
+    },
+    {
+      "name": "Eclipse IDE",
+      "aliases": [
+        "eclipse ide",
+        "eclipse"
+      ],
+      "subcategories": [
+        "General/Tools",
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "EDR",
+      "aliases": [
+        "edr",
+        "endpoint detection and response",
+        "xdr"
+      ],
+      "subcategories": [
+        "Cyber Security"
+      ]
+    },
+    {
+      "name": "Elasticsearch",
+      "aliases": [
+        "elasticsearch",
+        "elastic search",
+        "elk"
+      ],
+      "subcategories": [
+        "Software Engineering",
+        "DevOps",
+        "Data Science"
+      ]
+    },
+    {
+      "name": "Elixir",
+      "aliases": [
+        "elixir"
+      ],
+      "subcategories": [
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "ELK Stack",
+      "aliases": [
+        "elk stack",
+        "logstash",
+        "kibana",
+        "elastic stack"
+      ],
+      "subcategories": [
+        "DevOps"
+      ]
+    },
+    {
+      "name": "Ember.js",
+      "aliases": [
+        "ember.js",
+        "emberjs",
+        "ember js"
+      ],
+      "subcategories": [
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "Endpoint Security",
+      "aliases": [
+        "endpoint security",
+        "endpoint protection",
+        "antivirus"
+      ],
+      "subcategories": [
+        "Cyber Security"
+      ]
+    },
+    {
+      "name": "English Proficiency",
+      "aliases": [
+        "english proficiency",
+        "fluent in english",
+        "english communication"
+      ],
+      "subcategories": [
+        "General/Tools"
+      ]
+    },
+    {
+      "name": "Entity Framework",
+      "aliases": [
+        "entity framework",
+        "ef core",
+        "entity framework core"
+      ],
+      "subcategories": [
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "ESLint",
+      "aliases": [
+        "eslint",
+        "es lint"
+      ],
+      "subcategories": [
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "Ethical Hacking",
+      "aliases": [
+        "ethical hacking",
+        "ethical hacker"
+      ],
+      "subcategories": [
+        "Cyber Security"
+      ]
+    },
+    {
+      "name": "ETL",
+      "aliases": [
+        "etl",
+        "extract transform load",
+        "etl pipeline"
+      ],
+      "subcategories": [
+        "Data Science",
+        "DevOps"
+      ]
+    },
+    {
+      "name": "Event-Driven Architecture",
+      "aliases": [
+        "event-driven architecture",
+        "event driven architecture",
+        "event driven"
+      ],
+      "subcategories": [
+        "Software Engineering",
+        "DevOps"
+      ]
+    },
+    {
+      "name": "Exploratory Testing",
+      "aliases": [
+        "exploratory testing"
+      ],
+      "subcategories": [
+        "QA"
+      ]
+    },
+    {
+      "name": "Express.js",
+      "aliases": [
+        "express.js",
+        "express",
+        "expressjs",
+        "express js"
+      ],
+      "subcategories": [
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "FastAPI",
+      "aliases": [
+        "fastapi",
+        "fast api"
+      ],
+      "subcategories": [
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "Feature Engineering",
+      "aliases": [
+        "feature engineering",
+        "feature selection",
+        "feature extraction"
+      ],
+      "subcategories": [
+        "Data Science"
+      ]
+    },
+    {
+      "name": "Figma",
+      "aliases": [
+        "figma",
+        "figma design"
+      ],
+      "subcategories": [
+        "UI/UX"
+      ]
+    },
+    {
+      "name": "Figma Auto Layout",
+      "aliases": [
+        "figma auto layout",
+        "auto layout"
+      ],
+      "subcategories": [
+        "UI/UX"
+      ]
+    },
+    {
+      "name": "Firebase",
+      "aliases": [
+        "firebase",
+        "firestore",
+        "firebase realtime database"
+      ],
+      "subcategories": [
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "Firewall",
+      "aliases": [
+        "firewall",
+        "firewalls",
+        "firewall configuration",
+        "palo alto",
+        "fortigate"
+      ],
+      "subcategories": [
+        "Cyber Security",
+        "DevOps"
+      ]
+    },
+    {
+      "name": "Flask",
+      "aliases": [
+        "flask"
+      ],
+      "subcategories": [
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "Flutter",
+      "aliases": [
+        "flutter"
+      ],
+      "subcategories": [
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "Forecasting",
+      "aliases": [
+        "forecasting",
+        "demand forecasting",
+        "predictive forecasting"
+      ],
+      "subcategories": [
+        "Data Science"
+      ]
+    },
+    {
+      "name": "Fortran",
+      "aliases": [
+        "fortran"
+      ],
+      "subcategories": [
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "Framer",
+      "aliases": [
+        "framer",
+        "framer motion"
+      ],
+      "subcategories": [
+        "UI/UX"
+      ]
+    },
+    {
+      "name": "Functional Programming",
+      "aliases": [
+        "functional programming",
+        "fp"
+      ],
+      "subcategories": [
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "Functional Testing",
+      "aliases": [
+        "functional testing"
+      ],
+      "subcategories": [
+        "QA"
+      ]
+    },
+    {
+      "name": "Gatling",
+      "aliases": [
+        "gatling"
+      ],
+      "subcategories": [
+        "QA"
+      ]
+    },
+    {
+      "name": "GDPR",
+      "aliases": [
+        "gdpr",
+        "general data protection regulation"
+      ],
+      "subcategories": [
+        "Cyber Security"
+      ]
+    },
+    {
+      "name": "Generative AI",
+      "aliases": [
+        "generative ai",
+        "gen ai",
+        "genai"
+      ],
+      "subcategories": [
+        "Data Science"
+      ]
+    },
+    {
+      "name": "Gin",
+      "aliases": [
+        "gin",
+        "gin gonic"
+      ],
+      "subcategories": [
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "Git",
+      "aliases": [
+        "git",
+        "git version control"
+      ],
+      "subcategories": [
+        "Software Engineering",
+        "DevOps",
+        "General/Tools"
+      ]
+    },
+    {
+      "name": "GitHub",
+      "aliases": [
+        "github",
+        "git hub"
+      ],
+      "subcategories": [
+        "Software Engineering",
+        "DevOps",
+        "General/Tools"
+      ]
+    },
+    {
+      "name": "GitHub Actions",
+      "aliases": [
+        "github actions",
+        "github workflow"
+      ],
+      "subcategories": [
+        "DevOps"
+      ]
+    },
+    {
+      "name": "GitLab",
+      "aliases": [
+        "gitlab",
+        "git lab"
+      ],
+      "subcategories": [
+        "Software Engineering",
+        "DevOps",
+        "General/Tools"
+      ]
+    },
+    {
+      "name": "GitLab CI",
+      "aliases": [
+        "gitlab ci",
+        "gitlab ci/cd",
+        "gitlab runner"
+      ],
+      "subcategories": [
+        "DevOps"
+      ]
+    },
+    {
+      "name": "GitOps",
+      "aliases": [
+        "gitops",
+        "git ops"
+      ],
+      "subcategories": [
+        "DevOps"
+      ]
+    },
+    {
+      "name": "Go",
+      "aliases": [
+        "golang",
+        "go programming",
+        "go language"
+      ],
+      "subcategories": [
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "Google Analytics",
+      "aliases": [
+        "google analytics",
+        "ga4",
+        "google analytics 4"
+      ],
+      "subcategories": [
+        "Data Science"
+      ]
+    },
+    {
+      "name": "Google BigQuery",
+      "aliases": [
+        "google bigquery",
+        "bigquery",
+        "big query"
+      ],
+      "subcategories": [
+        "Data Science"
+      ]
+    },
+    {
+      "name": "Google Cloud Platform",
+      "aliases": [
+        "google cloud platform",
+        "gcp",
+        "google cloud"
+      ],
+      "subcategories": [
+        "DevOps"
+      ]
+    },
+    {
+      "name": "Google Workspace",
+      "aliases": [
+        "google workspace",
+        "google docs",
+        "google sheets",
+        "g suite"
+      ],
+      "subcategories": [
+        "General/Tools"
+      ]
+    },
+    {
+      "name": "Gradient Boosting",
+      "aliases": [
+        "gradient boosting",
+        "boosting"
+      ],
+      "subcategories": [
+        "Data Science"
+      ]
+    },
+    {
+      "name": "Grafana",
+      "aliases": [
+        "grafana"
+      ],
+      "subcategories": [
+        "DevOps"
+      ]
+    },
+    {
+      "name": "GraphQL",
+      "aliases": [
+        "graphql",
+        "graph ql"
+      ],
+      "subcategories": [
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "Groovy",
+      "aliases": [
+        "groovy"
+      ],
+      "subcategories": [
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "gRPC",
+      "aliases": [
+        "grpc",
+        "g rpc"
+      ],
+      "subcategories": [
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "Hadoop",
+      "aliases": [
+        "hadoop",
+        "apache hadoop",
+        "hdfs",
+        "mapreduce"
+      ],
+      "subcategories": [
+        "Data Science"
+      ]
+    },
+    {
+      "name": "HAProxy",
+      "aliases": [
+        "haproxy",
+        "ha proxy"
+      ],
+      "subcategories": [
+        "DevOps"
+      ]
+    },
+    {
+      "name": "Hashcat",
+      "aliases": [
+        "hashcat",
+        "hash cat"
+      ],
+      "subcategories": [
+        "Cyber Security"
+      ]
+    },
+    {
+      "name": "HashiCorp Vault",
+      "aliases": [
+        "hashicorp vault",
+        "vault"
+      ],
+      "subcategories": [
+        "DevOps",
+        "Cyber Security"
+      ]
+    },
+    {
+      "name": "Hashing",
+      "aliases": [
+        "hashing",
+        "hash functions",
+        "sha256",
+        "md5"
+      ],
+      "subcategories": [
+        "Cyber Security"
+      ]
+    },
+    {
+      "name": "Haskell",
+      "aliases": [
+        "haskell"
+      ],
+      "subcategories": [
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "Helm",
+      "aliases": [
+        "helm",
+        "helm charts"
+      ],
+      "subcategories": [
+        "DevOps"
+      ]
+    },
+    {
+      "name": "Heroku",
+      "aliases": [
+        "heroku"
+      ],
+      "subcategories": [
+        "DevOps"
+      ]
+    },
+    {
+      "name": "Heuristic Evaluation",
+      "aliases": [
+        "heuristic evaluation",
+        "usability heuristics"
+      ],
+      "subcategories": [
+        "UI/UX"
+      ]
+    },
+    {
+      "name": "Hibernate",
+      "aliases": [
+        "hibernate",
+        "hibernate orm"
+      ],
+      "subcategories": [
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "High Availability",
+      "aliases": [
+        "high availability",
+        "failover"
+      ],
+      "subcategories": [
+        "DevOps"
+      ]
+    },
+    {
+      "name": "HP ALM",
+      "aliases": [
+        "hp alm",
+        "alm",
+        "quality center"
+      ],
+      "subcategories": [
+        "QA"
+      ]
+    },
+    {
+      "name": "HTML",
+      "aliases": [
+        "html",
+        "html5",
+        "hypertext markup language"
+      ],
+      "subcategories": [
+        "Software Engineering",
+        "UI/UX"
+      ]
+    },
+    {
+      "name": "Hugging Face",
+      "aliases": [
+        "hugging face",
+        "huggingface",
+        "transformers library"
+      ],
+      "subcategories": [
+        "Data Science"
+      ]
+    },
+    {
+      "name": "Human-Centered Design",
+      "aliases": [
+        "human-centered design",
+        "human centred design",
+        "user centered design"
+      ],
+      "subcategories": [
+        "UI/UX"
+      ]
+    },
+    {
+      "name": "Hyper-V",
+      "aliases": [
+        "hyper-v",
+        "hyper v"
+      ],
+      "subcategories": [
+        "DevOps"
+      ]
+    },
+    {
+      "name": "Hyperparameter Tuning",
+      "aliases": [
+        "hyperparameter tuning",
+        "hyperparameter optimization",
+        "grid search"
+      ],
+      "subcategories": [
+        "Data Science"
+      ]
+    },
+    {
+      "name": "Hypothesis Testing",
+      "aliases": [
+        "hypothesis testing",
+        "significance testing"
+      ],
+      "subcategories": [
+        "Data Science"
+      ]
+    },
+    {
+      "name": "IBM QRadar",
+      "aliases": [
+        "ibm qradar",
+        "qradar"
+      ],
+      "subcategories": [
+        "Cyber Security"
+      ]
+    },
+    {
+      "name": "Iconography",
+      "aliases": [
+        "iconography",
+        "icon design"
+      ],
+      "subcategories": [
+        "UI/UX"
+      ]
+    },
+    {
+      "name": "Identity and Access Management",
+      "aliases": [
+        "identity and access management",
+        "iam",
+        "access management"
+      ],
+      "subcategories": [
+        "Cyber Security",
+        "DevOps"
+      ]
+    },
+    {
+      "name": "IFS Applications",
+      "aliases": [
+        "ifs applications",
+        "ifs",
+        "ifs cloud"
+      ],
+      "subcategories": [
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "IIS",
+      "aliases": [
+        "iis",
+        "internet information services"
+      ],
+      "subcategories": [
+        "DevOps"
+      ]
+    },
+    {
+      "name": "Incident Response",
+      "aliases": [
+        "incident response",
+        "incident handling",
+        "incident management"
+      ],
+      "subcategories": [
+        "Cyber Security"
+      ]
+    },
+    {
+      "name": "Information Architecture",
+      "aliases": [
+        "information architecture"
+      ],
+      "subcategories": [
+        "UI/UX"
+      ]
+    },
+    {
+      "name": "Infrastructure as Code",
+      "aliases": [
+        "infrastructure as code",
+        "iac"
+      ],
+      "subcategories": [
+        "DevOps"
+      ]
+    },
+    {
+      "name": "Integration Testing",
+      "aliases": [
+        "integration testing"
+      ],
+      "subcategories": [
+        "QA"
+      ]
+    },
+    {
+      "name": "IntelliJ IDEA",
+      "aliases": [
+        "intellij idea",
+        "intellij"
+      ],
+      "subcategories": [
+        "General/Tools",
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "Interaction Design",
+      "aliases": [
+        "interaction design",
+        "ixd"
+      ],
+      "subcategories": [
+        "UI/UX"
+      ]
+    },
+    {
+      "name": "Intrusion Detection System",
+      "aliases": [
+        "intrusion detection system",
+        "ids",
+        "intrusion detection"
+      ],
+      "subcategories": [
+        "Cyber Security"
+      ]
+    },
+    {
+      "name": "Intrusion Prevention System",
+      "aliases": [
+        "intrusion prevention system",
+        "ips",
+        "intrusion prevention"
+      ],
+      "subcategories": [
+        "Cyber Security"
+      ]
+    },
+    {
+      "name": "InVision",
+      "aliases": [
+        "invision",
+        "in vision"
+      ],
+      "subcategories": [
+        "UI/UX"
+      ]
+    },
+    {
+      "name": "Ionic",
+      "aliases": [
+        "ionic",
+        "ionic framework"
+      ],
+      "subcategories": [
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "iOS Development",
+      "aliases": [
+        "ios development",
+        "ios",
+        "ios sdk",
+        "xcode"
+      ],
+      "subcategories": [
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "ISO 27001",
+      "aliases": [
+        "iso 27001",
+        "iso27001",
+        "iso/iec 27001",
+        "isms"
+      ],
+      "subcategories": [
+        "Cyber Security"
+      ]
+    },
+    {
+      "name": "Istio",
+      "aliases": [
+        "istio",
+        "service mesh"
+      ],
+      "subcategories": [
+        "DevOps"
+      ]
+    },
+    {
+      "name": "Jasmine",
+      "aliases": [
+        "jasmine"
+      ],
+      "subcategories": [
+        "QA"
+      ]
+    },
+    {
+      "name": "Java",
+      "aliases": [
+        "java",
+        "core java",
+        "java se",
+        "java ee",
+        "j2ee"
+      ],
+      "subcategories": [
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "JavaScript",
+      "aliases": [
+        "javascript",
+        "js",
+        "ecmascript",
+        "java script"
+      ],
+      "subcategories": [
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "Jenkins",
+      "aliases": [
+        "jenkins",
+        "jenkins pipeline"
+      ],
+      "subcategories": [
+        "DevOps"
+      ]
+    },
+    {
+      "name": "Jest",
+      "aliases": [
+        "jest",
+        "jest testing"
+      ],
+      "subcategories": [
+        "QA"
+      ]
+    },
+    {
+      "name": "Jetpack Compose",
+      "aliases": [
+        "jetpack compose",
+        "android jetpack",
+        "jetpack"
+      ],
+      "subcategories": [
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "Jira",
+      "aliases": [
+        "jira",
+        "atlassian jira"
+      ],
+      "subcategories": [
+        "General/Tools"
+      ]
+    },
+    {
+      "name": "John the Ripper",
+      "aliases": [
+        "john the ripper"
+      ],
+      "subcategories": [
+        "Cyber Security"
+      ]
+    },
+    {
+      "name": "Joomla",
+      "aliases": [
+        "joomla"
+      ],
+      "subcategories": [
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "jQuery",
+      "aliases": [
+        "jquery",
+        "j query"
+      ],
+      "subcategories": [
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "JSF",
+      "aliases": [
+        "jsf",
+        "java server faces",
+        "javaserver faces"
+      ],
+      "subcategories": [
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "JSON",
+      "aliases": [
+        "json"
+      ],
+      "subcategories": [
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "JUnit",
+      "aliases": [
+        "junit",
+        "j unit"
+      ],
+      "subcategories": [
+        "QA"
+      ]
+    },
+    {
+      "name": "Jupyter Notebook",
+      "aliases": [
+        "jupyter notebook",
+        "jupyter",
+        "jupyter lab",
+        "google colab",
+        "colab"
+      ],
+      "subcategories": [
+        "Data Science"
+      ]
+    },
+    {
+      "name": "JWT",
+      "aliases": [
+        "jwt",
+        "json web token",
+        "json web tokens"
+      ],
+      "subcategories": [
+        "Software Engineering",
+        "Cyber Security"
+      ]
+    },
+    {
+      "name": "Kali Linux",
+      "aliases": [
+        "kali linux",
+        "kali"
+      ],
+      "subcategories": [
+        "Cyber Security"
+      ]
+    },
+    {
+      "name": "Kanban",
+      "aliases": [
+        "kanban"
+      ],
+      "subcategories": [
+        "General/Tools"
+      ]
+    },
+    {
+      "name": "Karma",
+      "aliases": [
+        "karma",
+        "karma runner"
+      ],
+      "subcategories": [
+        "QA"
+      ]
+    },
+    {
+      "name": "Keras",
+      "aliases": [
+        "keras"
+      ],
+      "subcategories": [
+        "Data Science"
+      ]
+    },
+    {
+      "name": "Kotlin",
+      "aliases": [
+        "kotlin"
+      ],
+      "subcategories": [
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "Kubeflow",
+      "aliases": [
+        "kubeflow",
+        "kube flow"
+      ],
+      "subcategories": [
+        "Data Science",
+        "DevOps"
+      ]
+    },
+    {
+      "name": "Kubernetes",
+      "aliases": [
+        "kubernetes",
+        "k8s",
+        "kube",
+        "eks",
+        "aks",
+        "gke"
+      ],
+      "subcategories": [
+        "DevOps"
+      ]
+    },
+    {
+      "name": "LangChain",
+      "aliases": [
+        "langchain",
+        "lang chain"
+      ],
+      "subcategories": [
+        "Data Science"
+      ]
+    },
+    {
+      "name": "Laravel",
+      "aliases": [
+        "laravel"
+      ],
+      "subcategories": [
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "Large Language Models",
+      "aliases": [
+        "large language models",
+        "llm",
+        "llms",
+        "gpt"
+      ],
+      "subcategories": [
+        "Data Science"
+      ]
+    },
+    {
+      "name": "LDAP",
+      "aliases": [
+        "ldap"
+      ],
+      "subcategories": [
+        "Cyber Security",
+        "DevOps"
+      ]
+    },
+    {
+      "name": "Leadership",
+      "aliases": [
+        "leadership",
+        "team leadership",
+        "team lead"
+      ],
+      "subcategories": [
+        "General/Tools"
+      ]
+    },
+    {
+      "name": "Less",
+      "aliases": [
+        "less",
+        "less css"
+      ],
+      "subcategories": [
+        "Software Engineering",
+        "UI/UX"
+      ]
+    },
+    {
+      "name": "LightGBM",
+      "aliases": [
+        "lightgbm",
+        "light gbm",
+        "lgbm"
+      ],
+      "subcategories": [
+        "Data Science"
+      ]
+    },
+    {
+      "name": "Linear Algebra",
+      "aliases": [
+        "linear algebra"
+      ],
+      "subcategories": [
+        "Data Science"
+      ]
+    },
+    {
+      "name": "Linux",
+      "aliases": [
+        "linux",
+        "linux administration",
+        "unix"
+      ],
+      "subcategories": [
+        "DevOps"
+      ]
+    },
+    {
+      "name": "Load Balancing",
+      "aliases": [
+        "load balancing",
+        "load balancer"
+      ],
+      "subcategories": [
+        "DevOps"
+      ]
+    },
+    {
+      "name": "Load Testing",
+      "aliases": [
+        "load testing"
+      ],
+      "subcategories": [
+        "QA"
+      ]
+    },
+    {
+      "name": "LoadRunner",
+      "aliases": [
+        "loadrunner",
+        "load runner"
+      ],
+      "subcategories": [
+        "QA"
+      ]
+    },
+    {
+      "name": "Logging",
+      "aliases": [
+        "logging",
+        "log management",
+        "centralized logging"
+      ],
+      "subcategories": [
+        "DevOps"
+      ]
+    },
+    {
+      "name": "Looker",
+      "aliases": [
+        "looker",
+        "looker studio",
+        "google data studio"
+      ],
+      "subcategories": [
+        "Data Science"
+      ]
+    },
+    {
+      "name": "Lua",
+      "aliases": [
+        "lua"
+      ],
+      "subcategories": [
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "Machine Learning",
+      "aliases": [
+        "machine learning",
+        "ml",
+        "machine-learning"
+      ],
+      "subcategories": [
+        "Data Science"
+      ]
+    },
+    {
+      "name": "Magento",
+      "aliases": [
+        "magento"
+      ],
+      "subcategories": [
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "Maltego",
+      "aliases": [
+        "maltego"
+      ],
+      "subcategories": [
+        "Cyber Security"
+      ]
+    },
+    {
+      "name": "Malware Analysis",
+      "aliases": [
+        "malware analysis",
+        "malware",
+        "ransomware analysis"
+      ],
+      "subcategories": [
+        "Cyber Security"
+      ]
+    },
+    {
+      "name": "Manual Testing",
+      "aliases": [
+        "manual testing",
+        "manual tester"
+      ],
+      "subcategories": [
+        "QA"
+      ]
+    },
+    {
+      "name": "MariaDB",
+      "aliases": [
+        "mariadb",
+        "maria db"
+      ],
+      "subcategories": [
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "Material UI",
+      "aliases": [
+        "material ui",
+        "mui",
+        "material-ui"
+      ],
+      "subcategories": [
+        "Software Engineering",
+        "UI/UX"
+      ]
+    },
+    {
+      "name": "MATLAB",
+      "aliases": [
+        "matlab",
+        "mat lab"
+      ],
+      "subcategories": [
+        "Data Science"
+      ]
+    },
+    {
+      "name": "Matplotlib",
+      "aliases": [
+        "matplotlib",
+        "mat plot lib"
+      ],
+      "subcategories": [
+        "Data Science"
+      ]
+    },
+    {
+      "name": "Mendix",
+      "aliases": [
+        "mendix"
+      ],
+      "subcategories": [
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "Mentoring",
+      "aliases": [
+        "mentoring",
+        "coaching",
+        "mentorship"
+      ],
+      "subcategories": [
+        "General/Tools"
+      ]
+    },
+    {
+      "name": "Message Queue",
+      "aliases": [
+        "message queue",
+        "message queues",
+        "messaging queue"
+      ],
+      "subcategories": [
+        "Software Engineering",
+        "DevOps"
+      ]
+    },
+    {
+      "name": "Metasploit",
+      "aliases": [
+        "metasploit",
+        "meta sploit"
+      ],
+      "subcategories": [
+        "Cyber Security"
+      ]
+    },
+    {
+      "name": "Micronaut",
+      "aliases": [
+        "micronaut"
+      ],
+      "subcategories": [
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "Microservices",
+      "aliases": [
+        "microservices",
+        "micro services",
+        "microservice architecture"
+      ],
+      "subcategories": [
+        "Software Engineering",
+        "DevOps"
+      ]
+    },
+    {
+      "name": "Microsoft Azure",
+      "aliases": [
+        "microsoft azure",
+        "azure"
+      ],
+      "subcategories": [
+        "DevOps"
+      ]
+    },
+    {
+      "name": "Microsoft Dynamics 365",
+      "aliases": [
+        "microsoft dynamics 365",
+        "dynamics 365",
+        "dynamics crm",
+        "d365"
+      ],
+      "subcategories": [
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "Microsoft Excel",
+      "aliases": [
+        "microsoft excel",
+        "excel",
+        "ms excel",
+        "advanced excel"
+      ],
+      "subcategories": [
+        "General/Tools",
+        "Data Science"
+      ]
+    },
+    {
+      "name": "Microsoft PowerPoint",
+      "aliases": [
+        "microsoft powerpoint",
+        "powerpoint",
+        "ms powerpoint"
+      ],
+      "subcategories": [
+        "General/Tools"
+      ]
+    },
+    {
+      "name": "Microsoft SQL Server",
+      "aliases": [
+        "microsoft sql server",
+        "sql server",
+        "mssql",
+        "ms sql"
+      ],
+      "subcategories": [
+        "Software Engineering",
+        "Data Science"
+      ]
+    },
+    {
+      "name": "Microsoft Teams",
+      "aliases": [
+        "microsoft teams",
+        "ms teams"
+      ],
+      "subcategories": [
+        "General/Tools"
+      ]
+    },
+    {
+      "name": "Microsoft Word",
+      "aliases": [
+        "microsoft word",
+        "ms word"
+      ],
+      "subcategories": [
+        "General/Tools"
+      ]
+    },
+    {
+      "name": "Miro",
+      "aliases": [
+        "miro",
+        "miro board"
+      ],
+      "subcategories": [
+        "UI/UX",
+        "General/Tools"
+      ]
+    },
+    {
+      "name": "MLflow",
+      "aliases": [
+        "mlflow",
+        "ml flow"
+      ],
+      "subcategories": [
+        "Data Science",
+        "DevOps"
+      ]
+    },
+    {
+      "name": "MLOps",
+      "aliases": [
+        "mlops",
+        "ml ops",
+        "machine learning operations"
+      ],
+      "subcategories": [
+        "Data Science",
+        "DevOps"
+      ]
+    },
+    {
+      "name": "Mobile Testing",
+      "aliases": [
+        "mobile testing",
+        "mobile app testing"
+      ],
+      "subcategories": [
+        "QA"
+      ]
+    },
+    {
+      "name": "Mocha",
+      "aliases": [
+        "mocha",
+        "mocha js"
+      ],
+      "subcategories": [
+        "QA"
+      ]
+    },
+    {
+      "name": "Mockups",
+      "aliases": [
+        "mockups",
+        "mockup",
+        "mock ups"
+      ],
+      "subcategories": [
+        "UI/UX"
+      ]
+    },
+    {
+      "name": "Model Evaluation",
+      "aliases": [
+        "model evaluation",
+        "model validation",
+        "cross validation",
+        "cross-validation"
+      ],
+      "subcategories": [
+        "Data Science"
+      ]
+    },
+    {
+      "name": "MongoDB",
+      "aliases": [
+        "mongodb",
+        "mongo",
+        "mongo db"
+      ],
+      "subcategories": [
+        "Software Engineering",
+        "Data Science"
+      ]
+    },
+    {
+      "name": "Monitoring",
+      "aliases": [
+        "monitoring",
+        "system monitoring",
+        "infrastructure monitoring"
+      ],
+      "subcategories": [
+        "DevOps"
+      ]
+    },
+    {
+      "name": "Motion Design",
+      "aliases": [
+        "motion design",
+        "motion graphics",
+        "micro interactions"
+      ],
+      "subcategories": [
+        "UI/UX"
+      ]
+    },
+    {
+      "name": "MuleSoft",
+      "aliases": [
+        "mulesoft",
+        "mule soft",
+        "mule esb"
+      ],
+      "subcategories": [
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "Multi-Factor Authentication",
+      "aliases": [
+        "multi-factor authentication",
+        "mfa",
+        "2fa",
+        "two factor authentication"
+      ],
+      "subcategories": [
+        "Cyber Security"
+      ]
+    },
+    {
+      "name": "Multithreading",
+      "aliases": [
+        "multithreading",
+        "multi threading",
+        "concurrency",
+        "threading"
+      ],
+      "subcategories": [
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "MVC",
+      "aliases": [
+        "mvc",
+        "model view controller"
+      ],
+      "subcategories": [
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "MVVM",
+      "aliases": [
+        "mvvm",
+        "model view viewmodel"
+      ],
+      "subcategories": [
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "MySQL",
+      "aliases": [
+        "mysql",
+        "my sql"
+      ],
+      "subcategories": [
+        "Software Engineering",
+        "Data Science"
+      ]
+    },
+    {
+      "name": "Nagios",
+      "aliases": [
+        "nagios"
+      ],
+      "subcategories": [
+        "DevOps"
+      ]
+    },
+    {
+      "name": "Naive Bayes",
+      "aliases": [
+        "naive bayes",
+        "naive bayes classifier"
+      ],
+      "subcategories": [
+        "Data Science"
+      ]
+    },
+    {
+      "name": "Natural Language Processing",
+      "aliases": [
+        "natural language processing",
+        "nlp",
+        "text mining"
+      ],
+      "subcategories": [
+        "Data Science"
+      ]
+    },
+    {
+      "name": "Neo4j",
+      "aliases": [
+        "neo4j",
+        "neo 4j",
+        "graph database"
+      ],
+      "subcategories": [
+        "Software Engineering",
+        "Data Science"
+      ]
+    },
+    {
+      "name": "Nessus",
+      "aliases": [
+        "nessus",
+        "tenable nessus"
+      ],
+      "subcategories": [
+        "Cyber Security"
+      ]
+    },
+    {
+      "name": "NestJS",
+      "aliases": [
+        "nestjs",
+        "nest js",
+        "nest.js"
+      ],
+      "subcategories": [
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "Network Security",
+      "aliases": [
+        "network security",
+        "network hardening"
+      ],
+      "subcategories": [
+        "Cyber Security",
+        "DevOps"
+      ]
+    },
+    {
+      "name": "Networking",
+      "aliases": [
+        "networking",
+        "computer networking",
+        "network administration"
+      ],
+      "subcategories": [
+        "DevOps"
+      ]
+    },
+    {
+      "name": "Neural Networks",
+      "aliases": [
+        "neural networks",
+        "neural network",
+        "ann",
+        "cnn",
+        "rnn",
+        "lstm"
+      ],
+      "subcategories": [
+        "Data Science"
+      ]
+    },
+    {
+      "name": "New Relic",
+      "aliases": [
+        "new relic",
+        "newrelic"
+      ],
+      "subcategories": [
+        "DevOps"
+      ]
+    },
+    {
+      "name": "Next.js",
+      "aliases": [
+        "next.js",
+        "nextjs",
+        "next js"
+      ],
+      "subcategories": [
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "Nginx",
+      "aliases": [
+        "nginx",
+        "engine x"
+      ],
+      "subcategories": [
+        "DevOps"
+      ]
+    },
+    {
+      "name": "NIST Framework",
+      "aliases": [
+        "nist framework",
+        "nist",
+        "nist csf"
+      ],
+      "subcategories": [
+        "Cyber Security"
+      ]
+    },
+    {
+      "name": "NLTK",
+      "aliases": [
+        "nltk",
+        "natural language toolkit"
+      ],
+      "subcategories": [
+        "Data Science"
+      ]
+    },
+    {
+      "name": "Nmap",
+      "aliases": [
+        "nmap",
+        "n map",
+        "network mapper"
+      ],
+      "subcategories": [
+        "Cyber Security"
+      ]
+    },
+    {
+      "name": "Node.js",
+      "aliases": [
+        "node.js",
+        "node",
+        "nodejs",
+        "node js"
+      ],
+      "subcategories": [
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "Notion",
+      "aliases": [
+        "notion"
+      ],
+      "subcategories": [
+        "General/Tools"
+      ]
+    },
+    {
+      "name": "NumPy",
+      "aliases": [
+        "numpy",
+        "numpy array",
+        "num py"
+      ],
+      "subcategories": [
+        "Data Science"
+      ]
+    },
+    {
+      "name": "NUnit",
+      "aliases": [
+        "nunit",
+        "n unit"
+      ],
+      "subcategories": [
+        "QA"
+      ]
+    },
+    {
+      "name": "Nuxt.js",
+      "aliases": [
+        "nuxt.js",
+        "nuxtjs",
+        "nuxt js"
+      ],
+      "subcategories": [
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "OAuth",
+      "aliases": [
+        "oauth",
+        "oauth2",
+        "oauth 2.0"
+      ],
+      "subcategories": [
+        "Software Engineering",
+        "Cyber Security"
+      ]
+    },
+    {
+      "name": "Object-Oriented Programming",
+      "aliases": [
+        "object-oriented programming",
+        "oop",
+        "object oriented programming",
+        "object oriented"
+      ],
+      "subcategories": [
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "Objective-C",
+      "aliases": [
+        "objective-c",
+        "objective c",
+        "objc"
+      ],
+      "subcategories": [
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "Observability",
+      "aliases": [
+        "observability"
+      ],
+      "subcategories": [
+        "DevOps"
+      ]
+    },
+    {
+      "name": "Odoo",
+      "aliases": [
+        "odoo"
+      ],
+      "subcategories": [
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "OpenCV",
+      "aliases": [
+        "opencv",
+        "open cv"
+      ],
+      "subcategories": [
+        "Data Science"
+      ]
+    },
+    {
+      "name": "OpenVAS",
+      "aliases": [
+        "openvas",
+        "open vas"
+      ],
+      "subcategories": [
+        "Cyber Security"
+      ]
+    },
+    {
+      "name": "Oracle Database",
+      "aliases": [
+        "oracle database",
+        "oracle db",
+        "oracle 11g",
+        "oracle 19c"
+      ],
+      "subcategories": [
+        "Software Engineering",
+        "Data Science"
+      ]
+    },
+    {
+      "name": "ORM",
+      "aliases": [
+        "orm",
+        "object relational mapping"
+      ],
+      "subcategories": [
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "OSCP",
+      "aliases": [
+        "oscp",
+        "offensive security certified professional"
+      ],
+      "subcategories": [
+        "Cyber Security"
+      ]
+    },
+    {
+      "name": "OutSystems",
+      "aliases": [
+        "outsystems",
+        "out systems"
+      ],
+      "subcategories": [
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "OWASP",
+      "aliases": [
+        "owasp",
+        "owasp top 10",
+        "owasp top ten"
+      ],
+      "subcategories": [
+        "Cyber Security"
+      ]
+    },
+    {
+      "name": "Packer",
+      "aliases": [
+        "packer",
+        "hashicorp packer"
+      ],
+      "subcategories": [
+        "DevOps"
+      ]
+    },
+    {
+      "name": "pandas",
+      "aliases": [
+        "pandas",
+        "python pandas"
+      ],
+      "subcategories": [
+        "Data Science"
+      ]
+    },
+    {
+      "name": "PCI DSS",
+      "aliases": [
+        "pci dss",
+        "pci-dss",
+        "payment card industry"
+      ],
+      "subcategories": [
+        "Cyber Security"
+      ]
+    },
+    {
+      "name": "Penetration Testing",
+      "aliases": [
+        "penetration testing",
+        "pen testing",
+        "pentest",
+        "pentesting"
+      ],
+      "subcategories": [
+        "Cyber Security"
+      ]
+    },
+    {
+      "name": "Performance Testing",
+      "aliases": [
+        "performance testing"
+      ],
+      "subcategories": [
+        "QA"
+      ]
+    },
+    {
+      "name": "Perl",
+      "aliases": [
+        "perl"
+      ],
+      "subcategories": [
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "Phishing",
+      "aliases": [
+        "phishing",
+        "phishing simulation",
+        "anti phishing"
+      ],
+      "subcategories": [
+        "Cyber Security"
+      ]
+    },
+    {
+      "name": "Phoenix Framework",
+      "aliases": [
+        "phoenix framework",
+        "phoenix"
+      ],
+      "subcategories": [
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "PHP",
+      "aliases": [
+        "php",
+        "php7",
+        "php8"
+      ],
+      "subcategories": [
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "PL/SQL",
+      "aliases": [
+        "pl/sql",
+        "plsql",
+        "pl sql"
+      ],
+      "subcategories": [
+        "Software Engineering",
+        "Data Science"
+      ]
+    },
+    {
+      "name": "Play Framework",
+      "aliases": [
+        "play framework"
+      ],
+      "subcategories": [
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "Playwright",
+      "aliases": [
+        "playwright",
+        "ms playwright"
+      ],
+      "subcategories": [
+        "QA"
+      ]
+    },
+    {
+      "name": "Plotly",
+      "aliases": [
+        "plotly",
+        "plot ly",
+        "dash"
+      ],
+      "subcategories": [
+        "Data Science"
+      ]
+    },
+    {
+      "name": "PostgreSQL",
+      "aliases": [
+        "postgresql",
+        "postgres",
+        "postgre sql",
+        "psql"
+      ],
+      "subcategories": [
+        "Software Engineering",
+        "Data Science"
+      ]
+    },
+    {
+      "name": "Postman",
+      "aliases": [
+        "postman",
+        "postman collections"
+      ],
+      "subcategories": [
+        "QA",
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "Power Apps",
+      "aliases": [
+        "power apps",
+        "powerapps",
+        "microsoft power apps"
+      ],
+      "subcategories": [
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "Power Automate",
+      "aliases": [
+        "power automate",
+        "power automate flow"
+      ],
+      "subcategories": [
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "Power BI",
+      "aliases": [
+        "power bi",
+        "powerbi",
+        "power-bi",
+        "microsoft power bi"
+      ],
+      "subcategories": [
+        "Data Science"
+      ]
+    },
+    {
+      "name": "PowerShell",
+      "aliases": [
+        "powershell",
+        "power shell"
+      ],
+      "subcategories": [
+        "DevOps"
+      ]
+    },
+    {
+      "name": "Predictive Modeling",
+      "aliases": [
+        "predictive modeling",
+        "predictive modelling",
+        "predictive analytics"
+      ],
+      "subcategories": [
+        "Data Science"
+      ]
+    },
+    {
+      "name": "Presentation Skills",
+      "aliases": [
+        "presentation skills",
+        "presentations"
+      ],
+      "subcategories": [
+        "General/Tools"
+      ]
+    },
+    {
+      "name": "Probability",
+      "aliases": [
+        "probability",
+        "probability theory"
+      ],
+      "subcategories": [
+        "Data Science"
+      ]
+    },
+    {
+      "name": "Problem Solving",
+      "aliases": [
+        "problem solving",
+        "problem-solving"
+      ],
+      "subcategories": [
+        "General/Tools"
+      ]
+    },
+    {
+      "name": "Progressive Web Apps",
+      "aliases": [
+        "progressive web apps",
+        "pwa",
+        "progressive web app"
+      ],
+      "subcategories": [
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "Project Management",
+      "aliases": [
+        "project management",
+        "pmp",
+        "project planning"
+      ],
+      "subcategories": [
+        "General/Tools"
+      ]
+    },
+    {
+      "name": "Prometheus",
+      "aliases": [
+        "prometheus"
+      ],
+      "subcategories": [
+        "DevOps"
+      ]
+    },
+    {
+      "name": "Prompt Engineering",
+      "aliases": [
+        "prompt engineering",
+        "prompting"
+      ],
+      "subcategories": [
+        "Data Science"
+      ]
+    },
+    {
+      "name": "Prototyping",
+      "aliases": [
+        "prototyping",
+        "prototype",
+        "interactive prototype",
+        "clickable prototype"
+      ],
+      "subcategories": [
+        "UI/UX"
+      ]
+    },
+    {
+      "name": "Proxmox",
+      "aliases": [
+        "proxmox"
+      ],
+      "subcategories": [
+        "DevOps"
+      ]
+    },
+    {
+      "name": "Public Key Infrastructure",
+      "aliases": [
+        "public key infrastructure",
+        "pki"
+      ],
+      "subcategories": [
+        "Cyber Security"
+      ]
+    },
+    {
+      "name": "Pulumi",
+      "aliases": [
+        "pulumi"
+      ],
+      "subcategories": [
+        "DevOps"
+      ]
+    },
+    {
+      "name": "Puppet",
+      "aliases": [
+        "puppet"
+      ],
+      "subcategories": [
+        "DevOps"
+      ]
+    },
+    {
+      "name": "Puppeteer",
+      "aliases": [
+        "puppeteer"
+      ],
+      "subcategories": [
+        "QA"
+      ]
+    },
+    {
+      "name": "PyCharm",
+      "aliases": [
+        "pycharm",
+        "py charm"
+      ],
+      "subcategories": [
+        "General/Tools",
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "pytest",
+      "aliases": [
+        "pytest",
+        "py test"
+      ],
+      "subcategories": [
+        "QA"
+      ]
+    },
+    {
+      "name": "Python",
+      "aliases": [
+        "python",
+        "python3",
+        "py3"
+      ],
+      "subcategories": [
+        "Software Engineering",
+        "Data Science"
+      ]
+    },
+    {
+      "name": "PyTorch",
+      "aliases": [
+        "pytorch",
+        "py torch",
+        "torch"
+      ],
+      "subcategories": [
+        "Data Science"
+      ]
+    },
+    {
+      "name": "QlikView",
+      "aliases": [
+        "qlikview",
+        "qlik",
+        "qlik sense"
+      ],
+      "subcategories": [
+        "Data Science"
+      ]
+    },
+    {
+      "name": "qTest",
+      "aliases": [
+        "qtest",
+        "q test"
+      ],
+      "subcategories": [
+        "QA"
+      ]
+    },
+    {
+      "name": "Quality Assurance",
+      "aliases": [
+        "quality assurance",
+        "qa",
+        "qa engineering"
+      ],
+      "subcategories": [
+        "QA"
+      ]
+    },
+    {
+      "name": "Quality Control",
+      "aliases": [
+        "quality control",
+        "qc"
+      ],
+      "subcategories": [
+        "QA"
+      ]
+    },
+    {
+      "name": "Quarkus",
+      "aliases": [
+        "quarkus"
+      ],
+      "subcategories": [
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "Query Optimization",
+      "aliases": [
+        "query optimization",
+        "sql tuning",
+        "query tuning"
+      ],
+      "subcategories": [
+        "Software Engineering",
+        "Data Science"
+      ]
+    },
+    {
+      "name": "R",
+      "aliases": [
+        "r programming",
+        "r language",
+        "rstats"
+      ],
+      "subcategories": [
+        "Data Science"
+      ]
+    },
+    {
+      "name": "RabbitMQ",
+      "aliases": [
+        "rabbitmq",
+        "rabbit mq"
+      ],
+      "subcategories": [
+        "Software Engineering",
+        "DevOps"
+      ]
+    },
+    {
+      "name": "Random Forest",
+      "aliases": [
+        "random forest",
+        "random forests"
+      ],
+      "subcategories": [
+        "Data Science"
+      ]
+    },
+    {
+      "name": "React",
+      "aliases": [
+        "react",
+        "reactjs",
+        "react.js",
+        "react js"
+      ],
+      "subcategories": [
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "React Native",
+      "aliases": [
+        "react native",
+        "react-native"
+      ],
+      "subcategories": [
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "Recommendation Systems",
+      "aliases": [
+        "recommendation systems",
+        "recommender system",
+        "recommendation engine"
+      ],
+      "subcategories": [
+        "Data Science"
+      ]
+    },
+    {
+      "name": "Red Hat Enterprise Linux",
+      "aliases": [
+        "red hat enterprise linux",
+        "rhel",
+        "red hat"
+      ],
+      "subcategories": [
+        "DevOps"
+      ]
+    },
+    {
+      "name": "Red Teaming",
+      "aliases": [
+        "red teaming",
+        "red team"
+      ],
+      "subcategories": [
+        "Cyber Security"
+      ]
+    },
+    {
+      "name": "Redis",
+      "aliases": [
+        "redis"
+      ],
+      "subcategories": [
+        "Software Engineering",
+        "DevOps"
+      ]
+    },
+    {
+      "name": "Redux",
+      "aliases": [
+        "redux",
+        "redux toolkit"
+      ],
+      "subcategories": [
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "Refactoring",
+      "aliases": [
+        "refactoring",
+        "code refactoring"
+      ],
+      "subcategories": [
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "Regression Analysis",
+      "aliases": [
+        "regression analysis",
+        "regression",
+        "linear regression",
+        "logistic regression"
+      ],
+      "subcategories": [
+        "Data Science"
+      ]
+    },
+    {
+      "name": "Regression Testing",
+      "aliases": [
+        "regression testing",
+        "regression suite"
+      ],
+      "subcategories": [
+        "QA"
+      ]
+    },
+    {
+      "name": "Reinforcement Learning",
+      "aliases": [
+        "reinforcement learning",
+        "rl"
+      ],
+      "subcategories": [
+        "Data Science"
+      ]
+    },
+    {
+      "name": "Remote Collaboration",
+      "aliases": [
+        "remote collaboration",
+        "remote work",
+        "distributed team"
+      ],
+      "subcategories": [
+        "General/Tools"
+      ]
+    },
+    {
+      "name": "Requirements Gathering",
+      "aliases": [
+        "requirements gathering",
+        "requirement analysis",
+        "requirements analysis"
+      ],
+      "subcategories": [
+        "General/Tools"
+      ]
+    },
+    {
+      "name": "Responsive Design",
+      "aliases": [
+        "responsive design",
+        "responsive web design",
+        "mobile first design"
+      ],
+      "subcategories": [
+        "UI/UX",
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "REST API",
+      "aliases": [
+        "rest api",
+        "rest",
+        "restful",
+        "restful api",
+        "rest apis"
+      ],
+      "subcategories": [
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "REST Assured",
+      "aliases": [
+        "rest assured",
+        "restassured"
+      ],
+      "subcategories": [
+        "QA"
+      ]
+    },
+    {
+      "name": "Retrieval Augmented Generation",
+      "aliases": [
+        "retrieval augmented generation",
+        "rag"
+      ],
+      "subcategories": [
+        "Data Science"
+      ]
+    },
+    {
+      "name": "Retrospective",
+      "aliases": [
+        "retrospective",
+        "sprint retrospective"
+      ],
+      "subcategories": [
+        "General/Tools"
+      ]
+    },
+    {
+      "name": "Reverse Engineering",
+      "aliases": [
+        "reverse engineering",
+        "binary analysis"
+      ],
+      "subcategories": [
+        "Cyber Security"
+      ]
+    },
+    {
+      "name": "Reverse Proxy",
+      "aliases": [
+        "reverse proxy"
+      ],
+      "subcategories": [
+        "DevOps"
+      ]
+    },
+    {
+      "name": "Risk Assessment",
+      "aliases": [
+        "risk assessment",
+        "risk management",
+        "risk analysis"
+      ],
+      "subcategories": [
+        "Cyber Security",
+        "General/Tools"
+      ]
+    },
+    {
+      "name": "Robot Framework",
+      "aliases": [
+        "robot framework",
+        "robotframework"
+      ],
+      "subcategories": [
+        "QA"
+      ]
+    },
+    {
+      "name": "Ruby",
+      "aliases": [
+        "ruby",
+        "ruby language"
+      ],
+      "subcategories": [
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "Ruby on Rails",
+      "aliases": [
+        "ruby on rails",
+        "rails",
+        "ror"
+      ],
+      "subcategories": [
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "Rust",
+      "aliases": [
+        "rust",
+        "rust lang"
+      ],
+      "subcategories": [
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "SAFe",
+      "aliases": [
+        "safe",
+        "scaled agile framework"
+      ],
+      "subcategories": [
+        "General/Tools"
+      ]
+    },
+    {
+      "name": "Salesforce",
+      "aliases": [
+        "salesforce",
+        "salesforce crm",
+        "apex",
+        "sfdc"
+      ],
+      "subcategories": [
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "Sanity Testing",
+      "aliases": [
+        "sanity testing"
+      ],
+      "subcategories": [
+        "QA"
+      ]
+    },
+    {
+      "name": "SAP",
+      "aliases": [
+        "sap",
+        "sap erp"
+      ],
+      "subcategories": [
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "SAS",
+      "aliases": [
+        "sas",
+        "sas programming"
+      ],
+      "subcategories": [
+        "Data Science"
+      ]
+    },
+    {
+      "name": "Sass",
+      "aliases": [
+        "sass",
+        "scss"
+      ],
+      "subcategories": [
+        "Software Engineering",
+        "UI/UX"
+      ]
+    },
+    {
+      "name": "Sauce Labs",
+      "aliases": [
+        "sauce labs",
+        "saucelabs"
+      ],
+      "subcategories": [
+        "QA"
+      ]
+    },
+    {
+      "name": "Scala",
+      "aliases": [
+        "scala"
+      ],
+      "subcategories": [
+        "Software Engineering",
+        "Data Science"
+      ]
+    },
+    {
+      "name": "Scalability",
+      "aliases": [
+        "scalability",
+        "horizontal scaling",
+        "auto scaling"
+      ],
+      "subcategories": [
+        "DevOps"
+      ]
+    },
+    {
+      "name": "scikit-learn",
+      "aliases": [
+        "scikit-learn",
+        "sklearn",
+        "scikit learn",
+        "sci-kit learn"
+      ],
+      "subcategories": [
+        "Data Science"
+      ]
+    },
+    {
+      "name": "SciPy",
+      "aliases": [
+        "scipy",
+        "sci py"
+      ],
+      "subcategories": [
+        "Data Science"
+      ]
+    },
+    {
+      "name": "Scrum",
+      "aliases": [
+        "scrum",
+        "scrum master",
+        "scrum framework"
+      ],
+      "subcategories": [
+        "General/Tools"
+      ]
+    },
+    {
+      "name": "SDET",
+      "aliases": [
+        "sdet",
+        "software development engineer in test"
+      ],
+      "subcategories": [
+        "QA"
+      ]
+    },
+    {
+      "name": "Seaborn",
+      "aliases": [
+        "seaborn",
+        "sea born"
+      ],
+      "subcategories": [
+        "Data Science"
+      ]
+    },
+    {
+      "name": "Secure Coding",
+      "aliases": [
+        "secure coding",
+        "secure code review"
+      ],
+      "subcategories": [
+        "Cyber Security",
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "Security Auditing",
+      "aliases": [
+        "security auditing",
+        "security audit",
+        "it audit"
+      ],
+      "subcategories": [
+        "Cyber Security"
+      ]
+    },
+    {
+      "name": "Security Awareness Training",
+      "aliases": [
+        "security awareness training",
+        "security awareness"
+      ],
+      "subcategories": [
+        "Cyber Security",
+        "General/Tools"
+      ]
+    },
+    {
+      "name": "Security Operations Center",
+      "aliases": [
+        "security operations center",
+        "soc",
+        "soc analyst"
+      ],
+      "subcategories": [
+        "Cyber Security"
+      ]
+    },
+    {
+      "name": "Security Testing",
+      "aliases": [
+        "security testing"
+      ],
+      "subcategories": [
+        "QA",
+        "Cyber Security"
+      ]
+    },
+    {
+      "name": "Selenium",
+      "aliases": [
+        "selenium",
+        "selenium webdriver",
+        "selenium grid"
+      ],
+      "subcategories": [
+        "QA"
+      ]
+    },
+    {
+      "name": "Sentiment Analysis",
+      "aliases": [
+        "sentiment analysis",
+        "opinion mining"
+      ],
+      "subcategories": [
+        "Data Science"
+      ]
+    },
+    {
+      "name": "Serverless",
+      "aliases": [
+        "serverless",
+        "serverless architecture",
+        "faas"
+      ],
+      "subcategories": [
+        "Software Engineering",
+        "DevOps"
+      ]
+    },
+    {
+      "name": "ServiceNow",
+      "aliases": [
+        "servicenow",
+        "service now"
+      ],
+      "subcategories": [
+        "Software Engineering",
+        "DevOps"
+      ]
+    },
+    {
+      "name": "Servlets",
+      "aliases": [
+        "servlets",
+        "java servlets",
+        "jsp",
+        "java server pages"
+      ],
+      "subcategories": [
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "SharePoint",
+      "aliases": [
+        "sharepoint",
+        "share point"
+      ],
+      "subcategories": [
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "Shopify",
+      "aliases": [
+        "shopify"
+      ],
+      "subcategories": [
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "SIEM",
+      "aliases": [
+        "siem",
+        "security information and event management"
+      ],
+      "subcategories": [
+        "Cyber Security"
+      ]
+    },
+    {
+      "name": "Single Sign-On",
+      "aliases": [
+        "single sign-on",
+        "sso"
+      ],
+      "subcategories": [
+        "Cyber Security"
+      ]
+    },
+    {
+      "name": "Site Reliability Engineering",
+      "aliases": [
+        "site reliability engineering",
+        "sre"
+      ],
+      "subcategories": [
+        "DevOps"
+      ]
+    },
+    {
+      "name": "Sitecore",
+      "aliases": [
+        "sitecore"
+      ],
+      "subcategories": [
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "Sketch",
+      "aliases": [
+        "sketch app",
+        "sketch design tool"
+      ],
+      "subcategories": [
+        "UI/UX"
+      ]
+    },
+    {
+      "name": "Slack",
+      "aliases": [
+        "slack"
+      ],
+      "subcategories": [
+        "General/Tools"
+      ]
+    },
+    {
+      "name": "Smoke Testing",
+      "aliases": [
+        "smoke testing"
+      ],
+      "subcategories": [
+        "QA"
+      ]
+    },
+    {
+      "name": "Snort",
+      "aliases": [
+        "snort"
+      ],
+      "subcategories": [
+        "Cyber Security"
+      ]
+    },
+    {
+      "name": "Snowflake",
+      "aliases": [
+        "snowflake"
+      ],
+      "subcategories": [
+        "Data Science"
+      ]
+    },
+    {
+      "name": "SOAP",
+      "aliases": [
+        "soap",
+        "soap api"
+      ],
+      "subcategories": [
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "SoapUI",
+      "aliases": [
+        "soapui",
+        "soap ui"
+      ],
+      "subcategories": [
+        "QA"
+      ]
+    },
+    {
+      "name": "SOC 2",
+      "aliases": [
+        "soc 2",
+        "soc2"
+      ],
+      "subcategories": [
+        "Cyber Security"
+      ]
+    },
+    {
+      "name": "Social Engineering",
+      "aliases": [
+        "social engineering"
+      ],
+      "subcategories": [
+        "Cyber Security"
+      ]
+    },
+    {
+      "name": "Software Architecture",
+      "aliases": [
+        "software architecture",
+        "system architecture",
+        "solution architecture"
+      ],
+      "subcategories": [
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "Software Development Life Cycle",
+      "aliases": [
+        "software development life cycle",
+        "sdlc"
+      ],
+      "subcategories": [
+        "General/Tools",
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "SOLID Principles",
+      "aliases": [
+        "solid principles",
+        "solid"
+      ],
+      "subcategories": [
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "Solidity",
+      "aliases": [
+        "solidity"
+      ],
+      "subcategories": [
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "spaCy",
+      "aliases": [
+        "spacy",
+        "spacy nlp"
+      ],
+      "subcategories": [
+        "Data Science"
+      ]
+    },
+    {
+      "name": "SpecFlow",
+      "aliases": [
+        "specflow",
+        "spec flow"
+      ],
+      "subcategories": [
+        "QA"
+      ]
+    },
+    {
+      "name": "Splunk",
+      "aliases": [
+        "splunk"
+      ],
+      "subcategories": [
+        "Cyber Security",
+        "DevOps"
+      ]
+    },
+    {
+      "name": "Spring",
+      "aliases": [
+        "spring",
+        "spring framework"
+      ],
+      "subcategories": [
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "Spring Boot",
+      "aliases": [
+        "spring boot",
+        "springboot"
+      ],
+      "subcategories": [
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "Sprint Planning",
+      "aliases": [
+        "sprint planning",
+        "sprint"
+      ],
+      "subcategories": [
+        "General/Tools"
+      ]
+    },
+    {
+      "name": "SPSS",
+      "aliases": [
+        "spss",
+        "ibm spss"
+      ],
+      "subcategories": [
+        "Data Science"
+      ]
+    },
+    {
+      "name": "SQL",
+      "aliases": [
+        "sql",
+        "structured query language"
+      ],
+      "subcategories": [
+        "Software Engineering",
+        "Data Science"
+      ]
+    },
+    {
+      "name": "SQL Injection",
+      "aliases": [
+        "sql injection",
+        "sqli"
+      ],
+      "subcategories": [
+        "Cyber Security"
+      ]
+    },
+    {
+      "name": "SQLite",
+      "aliases": [
+        "sqlite",
+        "sql lite"
+      ],
+      "subcategories": [
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "SSH",
+      "aliases": [
+        "ssh",
+        "secure shell"
+      ],
+      "subcategories": [
+        "DevOps"
+      ]
+    },
+    {
+      "name": "SSL/TLS",
+      "aliases": [
+        "ssl/tls",
+        "ssl",
+        "tls",
+        "https certificates"
+      ],
+      "subcategories": [
+        "Cyber Security",
+        "DevOps"
+      ]
+    },
+    {
+      "name": "Stakeholder Management",
+      "aliases": [
+        "stakeholder management",
+        "stakeholder engagement"
+      ],
+      "subcategories": [
+        "General/Tools"
+      ]
+    },
+    {
+      "name": "Stata",
+      "aliases": [
+        "stata"
+      ],
+      "subcategories": [
+        "Data Science"
+      ]
+    },
+    {
+      "name": "Statistical Modeling",
+      "aliases": [
+        "statistical modeling",
+        "statistical modelling"
+      ],
+      "subcategories": [
+        "Data Science"
+      ]
+    },
+    {
+      "name": "Statistics",
+      "aliases": [
+        "statistics",
+        "statistical analysis",
+        "applied statistics"
+      ],
+      "subcategories": [
+        "Data Science"
+      ]
+    },
+    {
+      "name": "Stored Procedures",
+      "aliases": [
+        "stored procedures",
+        "stored procedure"
+      ],
+      "subcategories": [
+        "Software Engineering",
+        "Data Science"
+      ]
+    },
+    {
+      "name": "Storyboarding",
+      "aliases": [
+        "storyboarding",
+        "storyboard"
+      ],
+      "subcategories": [
+        "UI/UX"
+      ]
+    },
+    {
+      "name": "Strapi",
+      "aliases": [
+        "strapi"
+      ],
+      "subcategories": [
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "Stress Testing",
+      "aliases": [
+        "stress testing"
+      ],
+      "subcategories": [
+        "QA"
+      ]
+    },
+    {
+      "name": "Struts",
+      "aliases": [
+        "struts",
+        "apache struts"
+      ],
+      "subcategories": [
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "Style Guide",
+      "aliases": [
+        "style guide",
+        "styleguide",
+        "brand guidelines"
+      ],
+      "subcategories": [
+        "UI/UX"
+      ]
+    },
+    {
+      "name": "Subversion",
+      "aliases": [
+        "subversion",
+        "svn"
+      ],
+      "subcategories": [
+        "Software Engineering",
+        "DevOps"
+      ]
+    },
+    {
+      "name": "Supabase",
+      "aliases": [
+        "supabase"
+      ],
+      "subcategories": [
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "Supervised Learning",
+      "aliases": [
+        "supervised learning"
+      ],
+      "subcategories": [
+        "Data Science"
+      ]
+    },
+    {
+      "name": "Support Vector Machine",
+      "aliases": [
+        "support vector machine",
+        "svm"
+      ],
+      "subcategories": [
+        "Data Science"
+      ]
+    },
+    {
+      "name": "Suricata",
+      "aliases": [
+        "suricata"
+      ],
+      "subcategories": [
+        "Cyber Security"
+      ]
+    },
+    {
+      "name": "Svelte",
+      "aliases": [
+        "svelte",
+        "sveltekit"
+      ],
+      "subcategories": [
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "Swagger",
+      "aliases": [
+        "swagger",
+        "openapi",
+        "open api"
+      ],
+      "subcategories": [
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "Swift",
+      "aliases": [
+        "swift",
+        "swift language"
+      ],
+      "subcategories": [
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "SwiftUI",
+      "aliases": [
+        "swiftui",
+        "swift ui"
+      ],
+      "subcategories": [
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "Symfony",
+      "aliases": [
+        "symfony"
+      ],
+      "subcategories": [
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "System Design",
+      "aliases": [
+        "system design",
+        "systems design"
+      ],
+      "subcategories": [
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "System Testing",
+      "aliases": [
+        "system testing"
+      ],
+      "subcategories": [
+        "QA"
+      ]
+    },
+    {
+      "name": "T-SQL",
+      "aliases": [
+        "t-sql",
+        "tsql",
+        "transact sql"
+      ],
+      "subcategories": [
+        "Software Engineering",
+        "Data Science"
+      ]
+    },
+    {
+      "name": "Tableau",
+      "aliases": [
+        "tableau",
+        "tableau desktop"
+      ],
+      "subcategories": [
+        "Data Science"
+      ]
+    },
+    {
+      "name": "Tailwind CSS",
+      "aliases": [
+        "tailwind css",
+        "tailwind",
+        "tailwindcss"
+      ],
+      "subcategories": [
+        "Software Engineering",
+        "UI/UX"
+      ]
+    },
+    {
+      "name": "TCP/IP",
+      "aliases": [
+        "tcp/ip",
+        "tcp ip"
+      ],
+      "subcategories": [
+        "DevOps"
+      ]
+    },
+    {
+      "name": "TeamCity",
+      "aliases": [
+        "teamcity",
+        "team city"
+      ],
+      "subcategories": [
+        "DevOps"
+      ]
+    },
+    {
+      "name": "Teamwork",
+      "aliases": [
+        "teamwork",
+        "team work",
+        "collaboration",
+        "team player"
+      ],
+      "subcategories": [
+        "General/Tools"
+      ]
+    },
+    {
+      "name": "Technical Documentation",
+      "aliases": [
+        "technical documentation",
+        "documentation",
+        "technical writing"
+      ],
+      "subcategories": [
+        "General/Tools"
+      ]
+    },
+    {
+      "name": "TensorFlow",
+      "aliases": [
+        "tensorflow",
+        "tensor flow",
+        "tf"
+      ],
+      "subcategories": [
+        "Data Science"
+      ]
+    },
+    {
+      "name": "Terraform",
+      "aliases": [
+        "terraform",
+        "terraform cloud"
+      ],
+      "subcategories": [
+        "DevOps"
+      ]
+    },
+    {
+      "name": "Test Cases",
+      "aliases": [
+        "test cases",
+        "test case design",
+        "test case writing"
+      ],
+      "subcategories": [
+        "QA"
+      ]
+    },
+    {
+      "name": "Test Coverage",
+      "aliases": [
+        "test coverage",
+        "code coverage"
+      ],
+      "subcategories": [
+        "QA"
+      ]
+    },
+    {
+      "name": "Test Data Management",
+      "aliases": [
+        "test data management",
+        "test data"
+      ],
+      "subcategories": [
+        "QA"
+      ]
+    },
+    {
+      "name": "Test Plan",
+      "aliases": [
+        "test plan",
+        "test planning",
+        "test strategy"
+      ],
+      "subcategories": [
+        "QA"
+      ]
+    },
+    {
+      "name": "Test Scenarios",
+      "aliases": [
+        "test scenarios",
+        "test scenario"
+      ],
+      "subcategories": [
+        "QA"
+      ]
+    },
+    {
+      "name": "Test-Driven Development",
+      "aliases": [
+        "test-driven development",
+        "tdd"
+      ],
+      "subcategories": [
+        "QA",
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "TestNG",
+      "aliases": [
+        "testng",
+        "test ng"
+      ],
+      "subcategories": [
+        "QA"
+      ]
+    },
+    {
+      "name": "TestRail",
+      "aliases": [
+        "testrail",
+        "test rail"
+      ],
+      "subcategories": [
+        "QA"
+      ]
+    },
+    {
+      "name": "Threat Detection",
+      "aliases": [
+        "threat detection",
+        "threat hunting"
+      ],
+      "subcategories": [
+        "Cyber Security"
+      ]
+    },
+    {
+      "name": "Threat Intelligence",
+      "aliases": [
+        "threat intelligence",
+        "cyber threat intelligence",
+        "cti"
+      ],
+      "subcategories": [
+        "Cyber Security"
+      ]
+    },
+    {
+      "name": "Threat Modeling",
+      "aliases": [
+        "threat modeling",
+        "threat modelling"
+      ],
+      "subcategories": [
+        "Cyber Security"
+      ]
+    },
+    {
+      "name": "Time Management",
+      "aliases": [
+        "time management"
+      ],
+      "subcategories": [
+        "General/Tools"
+      ]
+    },
+    {
+      "name": "Time Series Analysis",
+      "aliases": [
+        "time series analysis",
+        "time series",
+        "time-series forecasting"
+      ],
+      "subcategories": [
+        "Data Science"
+      ]
+    },
+    {
+      "name": "Travis CI",
+      "aliases": [
+        "travis ci",
+        "travisci"
+      ],
+      "subcategories": [
+        "DevOps"
+      ]
+    },
+    {
+      "name": "Trello",
+      "aliases": [
+        "trello"
+      ],
+      "subcategories": [
+        "General/Tools"
+      ]
+    },
+    {
+      "name": "TypeScript",
+      "aliases": [
+        "typescript",
+        "ts"
+      ],
+      "subcategories": [
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "Typography",
+      "aliases": [
+        "typography"
+      ],
+      "subcategories": [
+        "UI/UX"
+      ]
+    },
+    {
+      "name": "Ubuntu",
+      "aliases": [
+        "ubuntu"
+      ],
+      "subcategories": [
+        "DevOps"
+      ]
+    },
+    {
+      "name": "UI Design",
+      "aliases": [
+        "ui design",
+        "user interface design"
+      ],
+      "subcategories": [
+        "UI/UX"
+      ]
+    },
+    {
+      "name": "Unit Testing",
+      "aliases": [
+        "unit testing",
+        "unit tests"
+      ],
+      "subcategories": [
+        "QA",
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "unittest",
+      "aliases": [
+        "unittest",
+        "python unittest"
+      ],
+      "subcategories": [
+        "QA"
+      ]
+    },
+    {
+      "name": "Unsupervised Learning",
+      "aliases": [
+        "unsupervised learning"
+      ],
+      "subcategories": [
+        "Data Science"
+      ]
+    },
+    {
+      "name": "Usability Testing",
+      "aliases": [
+        "usability testing",
+        "usability test"
+      ],
+      "subcategories": [
+        "UI/UX",
+        "QA"
+      ]
+    },
+    {
+      "name": "User Acceptance Testing",
+      "aliases": [
+        "user acceptance testing",
+        "uat",
+        "acceptance testing"
+      ],
+      "subcategories": [
+        "QA"
+      ]
+    },
+    {
+      "name": "User Journey Mapping",
+      "aliases": [
+        "user journey mapping",
+        "journey mapping",
+        "customer journey map",
+        "user flows"
+      ],
+      "subcategories": [
+        "UI/UX"
+      ]
+    },
+    {
+      "name": "User Personas",
+      "aliases": [
+        "user personas",
+        "personas",
+        "persona development"
+      ],
+      "subcategories": [
+        "UI/UX"
+      ]
+    },
+    {
+      "name": "User Research",
+      "aliases": [
+        "user research",
+        "ux research",
+        "user interviews"
+      ],
+      "subcategories": [
+        "UI/UX"
+      ]
+    },
+    {
+      "name": "User Stories",
+      "aliases": [
+        "user stories",
+        "user story"
+      ],
+      "subcategories": [
+        "General/Tools"
+      ]
+    },
+    {
+      "name": "UX Design",
+      "aliases": [
+        "ux design",
+        "user experience design"
+      ],
+      "subcategories": [
+        "UI/UX"
+      ]
+    },
+    {
+      "name": "UX Writing",
+      "aliases": [
+        "ux writing",
+        "microcopy",
+        "content design"
+      ],
+      "subcategories": [
+        "UI/UX"
+      ]
+    },
+    {
+      "name": "Vagrant",
+      "aliases": [
+        "vagrant"
+      ],
+      "subcategories": [
+        "DevOps"
+      ]
+    },
+    {
+      "name": "Version Control",
+      "aliases": [
+        "version control",
+        "source control",
+        "scm"
+      ],
+      "subcategories": [
+        "Software Engineering",
+        "DevOps",
+        "General/Tools"
+      ]
+    },
+    {
+      "name": "Vim",
+      "aliases": [
+        "vim"
+      ],
+      "subcategories": [
+        "General/Tools",
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "VirtualBox",
+      "aliases": [
+        "virtualbox",
+        "virtual box"
+      ],
+      "subcategories": [
+        "DevOps"
+      ]
+    },
+    {
+      "name": "Virtualization",
+      "aliases": [
+        "virtualization",
+        "virtualisation"
+      ],
+      "subcategories": [
+        "DevOps"
+      ]
+    },
+    {
+      "name": "Visual Basic",
+      "aliases": [
+        "visual basic",
+        "vb",
+        "vb.net",
+        "vb net"
+      ],
+      "subcategories": [
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "Visual Design",
+      "aliases": [
+        "visual design",
+        "graphic design"
+      ],
+      "subcategories": [
+        "UI/UX"
+      ]
+    },
+    {
+      "name": "Visual Studio",
+      "aliases": [
+        "visual studio",
+        "ms visual studio"
+      ],
+      "subcategories": [
+        "General/Tools",
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "Visual Studio Code",
+      "aliases": [
+        "visual studio code",
+        "vscode",
+        "vs code"
+      ],
+      "subcategories": [
+        "General/Tools",
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "Vite",
+      "aliases": [
+        "vite",
+        "vitejs"
+      ],
+      "subcategories": [
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "VMware",
+      "aliases": [
+        "vmware",
+        "vsphere",
+        "esxi"
+      ],
+      "subcategories": [
+        "DevOps"
+      ]
+    },
+    {
+      "name": "VPN",
+      "aliases": [
+        "vpn",
+        "virtual private network"
+      ],
+      "subcategories": [
+        "Cyber Security",
+        "DevOps"
+      ]
+    },
+    {
+      "name": "Vue.js",
+      "aliases": [
+        "vue.js",
+        "vue",
+        "vuejs",
+        "vue js"
+      ],
+      "subcategories": [
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "Vulnerability Assessment",
+      "aliases": [
+        "vulnerability assessment",
+        "vulnerability scanning"
+      ],
+      "subcategories": [
+        "Cyber Security"
+      ]
+    },
+    {
+      "name": "Vulnerability Management",
+      "aliases": [
+        "vulnerability management",
+        "patch management"
+      ],
+      "subcategories": [
+        "Cyber Security"
+      ]
+    },
+    {
+      "name": "Waterfall",
+      "aliases": [
+        "waterfall",
+        "waterfall model"
+      ],
+      "subcategories": [
+        "General/Tools"
+      ]
+    },
+    {
+      "name": "Wazuh",
+      "aliases": [
+        "wazuh"
+      ],
+      "subcategories": [
+        "Cyber Security"
+      ]
+    },
+    {
+      "name": "Web Application Firewall",
+      "aliases": [
+        "web application firewall",
+        "waf"
+      ],
+      "subcategories": [
+        "Cyber Security",
+        "DevOps"
+      ]
+    },
+    {
+      "name": "Web Components",
+      "aliases": [
+        "web components",
+        "web component"
+      ],
+      "subcategories": [
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "Webpack",
+      "aliases": [
+        "webpack"
+      ],
+      "subcategories": [
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "WebRTC",
+      "aliases": [
+        "webrtc",
+        "web rtc"
+      ],
+      "subcategories": [
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "WebSocket",
+      "aliases": [
+        "websocket",
+        "web socket",
+        "websockets"
+      ],
+      "subcategories": [
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "White Box Testing",
+      "aliases": [
+        "white box testing",
+        "whitebox testing"
+      ],
+      "subcategories": [
+        "QA"
+      ]
+    },
+    {
+      "name": "Windows Server",
+      "aliases": [
+        "windows server",
+        "windows server administration"
+      ],
+      "subcategories": [
+        "DevOps"
+      ]
+    },
+    {
+      "name": "Wireframing",
+      "aliases": [
+        "wireframing",
+        "wireframe",
+        "wireframes"
+      ],
+      "subcategories": [
+        "UI/UX"
+      ]
+    },
+    {
+      "name": "Wireshark",
+      "aliases": [
+        "wireshark",
+        "wire shark"
+      ],
+      "subcategories": [
+        "Cyber Security"
+      ]
+    },
+    {
+      "name": "WordPress",
+      "aliases": [
+        "wordpress",
+        "word press",
+        "wp"
+      ],
+      "subcategories": [
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "WSO2",
+      "aliases": [
+        "wso2",
+        "wso 2",
+        "wso2 api manager"
+      ],
+      "subcategories": [
+        "Software Engineering",
+        "DevOps"
+      ]
+    },
+    {
+      "name": "Xamarin",
+      "aliases": [
+        "xamarin"
+      ],
+      "subcategories": [
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "XGBoost",
+      "aliases": [
+        "xgboost",
+        "xg boost"
+      ],
+      "subcategories": [
+        "Data Science"
+      ]
+    },
+    {
+      "name": "XML",
+      "aliases": [
+        "xml"
+      ],
+      "subcategories": [
+        "Software Engineering"
+      ]
+    },
+    {
+      "name": "Xray",
+      "aliases": [
+        "xray",
+        "xray test management"
+      ],
+      "subcategories": [
+        "QA"
+      ]
+    },
+    {
+      "name": "Zabbix",
+      "aliases": [
+        "zabbix"
+      ],
+      "subcategories": [
+        "DevOps"
+      ]
+    },
+    {
+      "name": "Zephyr",
+      "aliases": [
+        "zephyr",
+        "zephyr scale"
+      ],
+      "subcategories": [
+        "QA"
+      ]
+    },
+    {
+      "name": "Zeplin",
+      "aliases": [
+        "zeplin"
+      ],
+      "subcategories": [
+        "UI/UX"
+      ]
+    },
+    {
+      "name": "Zero Trust",
+      "aliases": [
+        "zero trust",
+        "zero trust architecture"
+      ],
+      "subcategories": [
+        "Cyber Security"
+      ]
+    }
+  ]
+}
