@@ -5,6 +5,7 @@ from datetime import datetime
 from sqlalchemy import (
     Boolean,
     DateTime,
+    Float,
     ForeignKey,
     Integer,
     String,
@@ -47,8 +48,17 @@ class Job(Base):
     title: Mapped[str] = mapped_column(String(255), nullable=False, index=True)
     description: Mapped[str | None] = mapped_column(LONGTEXT, nullable=True)
 
-    # One of SUBCATEGORIES above, also the grouping key used by the forecasts
+    # The raw label from the scraper, taken from whichever category page the
+    # job was listed under. Coarse, but it is what the source said.
     subcategory: Mapped[str] = mapped_column(String(60), nullable=False, index=True)
+
+    # What the trained classifier thinks the job is, from its description text.
+    # Kept alongside the scraped label rather than replacing it so both can be
+    # shown. Null until the classifier has run over the job.
+    predicted_subcategory: Mapped[str | None] = mapped_column(
+        String(60), nullable=True, index=True
+    )
+    classifier_confidence: Mapped[float | None] = mapped_column(Float, nullable=True)
 
     location: Mapped[str | None] = mapped_column(String(150), nullable=True, index=True)
     url: Mapped[str | None] = mapped_column(String(500), nullable=True)

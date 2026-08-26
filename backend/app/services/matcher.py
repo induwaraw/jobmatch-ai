@@ -75,12 +75,18 @@ class JobMatch:
     job_id: int
     title: str
     company_name: str | None
+    # The label used for field matching
     subcategory: str | None
+    # The raw scraped label, kept so the UI can show both
+    scraped_subcategory: str | None
+    subcategory_source: str
     location: str | None
     url: str | None
     match_score: int
     skill_score: int
-    field_score: int
+    # Fractional, because it is scaled by the classifier's confidence
+    field_score: float
+    classifier_confidence: float | None
     matched_skills: list[str] = field(default_factory=list)
     missing_skills: list[str] = field(default_factory=list)
     # Required skills only, General/Tools are excluded from both
@@ -111,7 +117,13 @@ class _JobProfile:
     required_skills: set[str]
     # Skills whose only subcategory is General/Tools
     general_skills: set[str]
+    # The subcategory field matching actually compares against
     subcategory: str | None
+    # Where that subcategory came from: "predicted", "live model" or "scraped"
+    subcategory_source: str
+    # How sure the classifier was. None when the label did not come from a
+    # model, which means the job earns no field score at all.
+    confidence: float | None
 
 
 # Job text does not change between scrapes, so the extracted skills and
@@ -151,17 +163,29 @@ def _job_profile(job: Job) -> _JobProfile:
         else:
             required.add(m.name)
 
-    if classifier.available:
+    # Prefer the label the trained classifier gave this job. It was produced
+    # offline from the description text, so it is far better than the scraped
+    # label, which only records which category page the job was listed under.
+    if job.predicted_subcategory:
+        subcategory = job.predicted_subcategory
+        source = "predicted"
+        confidence = job.classifier_confidence
+    elif classifier.available:
         result = classifier.classify(job.description or "", skills=matches)
         subcategory = result.subcategory or job.subcategory
+        source = "live model"
+        confidence = result.confidence
     else:
-        # In fallback mode the scraped subcategory is a better signal than a
-        # heuristic over the job text, because the scraper knows which
-        # category page the job came from.
         subcategory = job.subcategory
+        source = "scraped"
+        confidence = None
 
     profile = _JobProfile(
-        required_skills=required, general_skills=general, subcategory=subcategory
+        required_skills=required,
+        general_skills=general,
+        subcategory=subcategory,
+        subcategory_source=source,
+        confidence=confidence,
     )
     _job_cache[key] = profile
     return profile
@@ -222,13 +246,20 @@ def match_cv_to_jobs(
             100.0,
             100 * (COVERAGE_WEIGHT * coverage + OVERLAP_WEIGHT * overlap) + bonus,
         )
-        field_score = (
-            100
-            if cv_class.subcategory
+        # The field bonus is scaled by how sure the classifier was about the
+        # job, so a confident Data Science label is worth far more than a
+        # borderline one. No confidence means no field score.
+        same_field = bool(
+            cv_class.subcategory
             and profile.subcategory
             and cv_class.subcategory == profile.subcategory
-            else 0
         )
+        field_score = (
+            100.0 * profile.confidence
+            if same_field and profile.confidence is not None
+            else 0.0
+        )
+
         final = SKILL_WEIGHT * skill_score + FIELD_WEIGHT * field_score
 
         results.append(
@@ -237,11 +268,14 @@ def match_cv_to_jobs(
                 title=job.title,
                 company_name=job.employer.name if job.employer else None,
                 subcategory=profile.subcategory,
+                scraped_subcategory=job.subcategory,
+                subcategory_source=profile.subcategory_source,
                 location=job.location,
                 url=job.url,
                 match_score=round(final),
                 skill_score=round(skill_score),
-                field_score=field_score,
+                field_score=round(field_score, 1),
+                classifier_confidence=profile.confidence,
                 matched_skills=matched,
                 missing_skills=missing,
                 job_skill_count=len(profile.required_skills),
