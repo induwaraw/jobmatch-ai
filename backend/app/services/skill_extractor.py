@@ -5,30 +5,35 @@ is fixed and known, and because there is no labelled skill data to train on.
 Matching a known list is both more accurate and fully explainable, which
 matters for the transparency page.
 
-Usage from the command line:
+The taxonomy JSON stays under ml/skills/ as the single source of truth. This
+module is the runtime code that consumes it, which is why it lives in the
+backend.
 
-    python ml/skills/skill_extractor.py --text "Experienced with Docker and K8s"
-    python ml/skills/skill_extractor.py --file some_cv.txt
-    python ml/skills/skill_extractor.py --demo
+Usage from the command line, run from the backend folder:
+
+    python -m app.services.skill_extractor --text "Experienced with Docker"
+    python -m app.services.skill_extractor --file some_cv.txt
+    python -m app.services.skill_extractor --demo
 
 Usage from Python:
 
-    from skill_extractor import SkillExtractor
-    extractor = SkillExtractor()
-    skills = extractor.extract(cv_text)
+    from app.services.skill_extractor import get_skill_extractor
+    skills = get_skill_extractor().extract(cv_text)
 """
 
 import argparse
 import json
-import sys
 from dataclasses import dataclass, field
+from functools import lru_cache
 from pathlib import Path
 
 import spacy
 from spacy.matcher import PhraseMatcher
 from spacy.util import filter_spans
 
-DEFAULT_TAXONOMY = Path(__file__).resolve().parent / "skills_taxonomy.json"
+from app.core.config import settings
+
+DEFAULT_TAXONOMY = Path(settings.SKILLS_TAXONOMY_PATH)
 DEFAULT_MODEL = "en_core_web_sm"
 
 # Only tokenisation is needed for phrase matching, so the statistical
@@ -137,6 +142,30 @@ class SkillExtractor:
             for sub in match.subcategories:
                 grouped.setdefault(sub, []).append(match)
         return {sub: matches for sub, matches in grouped.items() if matches}
+
+    def subcategory_counts(self, matches: list[SkillMatch]) -> dict[str, int]:
+        """How many matched skills belong to each subcategory.
+
+        General/Tools is left out because it is cross-cutting and would win on
+        volume without saying anything about the person's specialism.
+        """
+        counts: dict[str, int] = {}
+        for match in matches:
+            for sub in match.subcategories:
+                if sub == "General/Tools":
+                    continue
+                counts[sub] = counts.get(sub, 0) + 1
+        return counts
+
+
+@lru_cache(maxsize=1)
+def get_skill_extractor() -> SkillExtractor:
+    """Shared extractor instance.
+
+    Building the PhraseMatcher over 1300 surface forms takes a moment, so it
+    is done once per process rather than per request.
+    """
+    return SkillExtractor()
 
 
 def _print_report(extractor: SkillExtractor, text: str, title: str = "") -> None:

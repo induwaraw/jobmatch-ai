@@ -22,6 +22,10 @@ cryptography==50.0.0
 requests==2.34.2
 beautifulsoup4==4.15.0
 
+# Skill extraction. The en_core_web_sm model is a separate download:
+#   python -m spacy download en_core_web_sm
+spacy==3.8.16
+
 # CV text extraction
 pdfplumber==0.11.10
 python-docx==1.2.0

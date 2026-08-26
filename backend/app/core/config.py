@@ -32,6 +32,17 @@ class Settings(BaseSettings):
     # enough to work with comfortably and short enough to limit a leaked token.
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 60
 
+    # The curated skills taxonomy. It lives under ml/ because that is where it
+    # was built, and it stays the single copy.
+    SKILLS_TAXONOMY_PATH: str = str(
+        BACKEND_DIR.parent / "ml" / "skills" / "skills_taxonomy.json"
+    )
+
+    # Folder holding the trained DistilBERT subcategory classifier. The model
+    # is not in the repository, so this is empty until a local copy exists.
+    # When it is empty the matcher runs in fallback mode instead.
+    CLASSIFIER_MODEL_PATH: str = ""
+
     model_config = SettingsConfigDict(
         env_file=ENV_FILE,
         env_file_encoding="utf-8",
