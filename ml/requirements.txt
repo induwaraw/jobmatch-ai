@@ -15,7 +15,13 @@
 #   pip install -r ml\requirements.txt
 
 pandas==2.3.3
+numpy==2.2.6
 scikit-learn==1.7.2
 kaggle==1.7.4.5
 python-dotenv==1.2.3
 spacy==3.8.16
+
+# Used by build_fred_demand_series.py to call the FRED API. Both requests and
+# numpy already arrive as dependencies of kaggle and pandas, but the scripts
+# import them directly so they are declared here too.
+requests==2.34.2
