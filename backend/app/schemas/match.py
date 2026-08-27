@@ -48,7 +48,11 @@ class MatchResponse(BaseModel):
 
     cv_skill_count: int
     cv_skills: list[str]
+
+    # Open vacancies with real text that were scored
     jobs_considered: int
+    # Vacancies with text left out because they have already closed
+    jobs_excluded_closed: int
     jobs_skipped_no_skills: int
     returned: int
     matches: list[JobMatchOut]

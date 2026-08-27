@@ -28,11 +28,14 @@ are only used for the vacancy volume forecasting.
 import logging
 from dataclasses import dataclass, field
 
-from sqlalchemy import select
+from sqlalchemy import func, or_, select
 from sqlalchemy.orm import Session, selectinload
 
 from app.models.cv import CV
 from app.models.job import Job
+# The same "open until its closing date" rule the scrapers use, so the API and
+# the scraper agree on what counts as an open vacancy.
+from app.scrapers.common import start_of_today
 from app.services.classifier import MODE_FALLBACK, get_classifier
 from app.services.skill_extractor import get_skill_extractor
 
@@ -104,7 +107,10 @@ class MatchResult:
     classifier_mode: str
     cv_skill_count: int
     cv_skills: list[str]
+    # Open vacancies with real description text that were scored
     jobs_considered: int
+    # Vacancies with text that were left out because they have closed
+    jobs_excluded_closed: int
     jobs_skipped_no_skills: int
     matches: list[JobMatch]
 
@@ -191,18 +197,66 @@ def _job_profile(job: Job) -> _JobProfile:
     return profile
 
 
-def _eligible_jobs(db: Session) -> list[Job]:
-    """Jobs with real description text."""
-    stmt = (
-        select(Job)
-        .options(selectinload(Job.employer))
-        .where(
-            Job.description.isnot(None),
-            Job.description != "",
-            Job.description.notlike(f"{PLACEHOLDER_PREFIX}%"),
-        )
+def _has_real_text():
+    """Conditions for a job whose description is worth matching against."""
+    return (
+        Job.description.isnot(None),
+        Job.description != "",
+        Job.description.notlike(f"{PLACEHOLDER_PREFIX}%"),
     )
-    return list(db.scalars(stmt).all())
+
+
+def open_job_conditions():
+    """Conditions for a vacancy that is still open, for reuse by the API."""
+    return (
+        Job.is_active.is_(True),
+        or_(Job.expiry_date.is_(None), Job.expiry_date >= start_of_today()),
+    )
+
+
+def real_text_conditions():
+    """Conditions for a job whose description is real text, not a placeholder."""
+    return _has_real_text()
+
+
+def job_required_skills(job: Job) -> set[str]:
+    """The skills a job asks for, excluding cross cutting General/Tools ones.
+
+    Uses the same cached profile the matcher uses, so the count shown when
+    browsing agrees with the count shown in a match.
+    """
+    return _job_profile(job).required_skills
+
+
+def job_subcategory(job: Job) -> str | None:
+    """The classifier's label where there is one, otherwise the scraped label."""
+    return job.predicted_subcategory or job.subcategory
+
+
+def _eligible_jobs(db: Session) -> tuple[list[Job], int]:
+    """Open jobs with real description text, plus how many closed ones we skipped.
+
+    A closed vacancy is no use to someone applying, so expired and inactive
+    jobs are left out rather than padding the results.
+    """
+    today = start_of_today()
+    open_only = (
+        Job.is_active.is_(True),
+        or_(Job.expiry_date.is_(None), Job.expiry_date >= today),
+    )
+
+    jobs = list(
+        db.scalars(
+            select(Job)
+            .options(selectinload(Job.employer))
+            .where(*_has_real_text(), *open_only)
+        ).all()
+    )
+
+    with_text = db.scalar(
+        select(func.count()).select_from(Job).where(*_has_real_text())
+    )
+    return jobs, int(with_text or 0) - len(jobs)
 
 
 def match_cv_to_jobs(
@@ -217,7 +271,7 @@ def match_cv_to_jobs(
 
     cv_class = classifier.classify(cv.raw_text or "", skills=cv_matches)
 
-    jobs = _eligible_jobs(db)
+    jobs, excluded_closed = _eligible_jobs(db)
     results: list[JobMatch] = []
     skipped = 0
 
@@ -297,6 +351,7 @@ def match_cv_to_jobs(
         cv_skill_count=len(cv_skills),
         cv_skills=sorted(cv_skills),
         jobs_considered=len(jobs),
+        jobs_excluded_closed=excluded_closed,
         jobs_skipped_no_skills=skipped,
         matches=results[:top_n],
     )

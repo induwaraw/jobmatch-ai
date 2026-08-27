@@ -3,7 +3,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from app.api.routes import auth, cv, forecasts, match
+from app.api.routes import admin, auth, cv, forecasts, jobs, match
 
 app = FastAPI(
     title="JobMatch AI API",
@@ -30,7 +30,9 @@ app.add_middleware(
 app.include_router(auth.router)
 app.include_router(cv.router)
 app.include_router(match.router)
+app.include_router(jobs.router)
 app.include_router(forecasts.router)
+app.include_router(admin.router)
 
 
 @app.get("/")

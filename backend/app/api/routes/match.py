@@ -47,6 +47,7 @@ def match_cv(
         cv_skill_count=result.cv_skill_count,
         cv_skills=result.cv_skills,
         jobs_considered=result.jobs_considered,
+        jobs_excluded_closed=result.jobs_excluded_closed,
         jobs_skipped_no_skills=result.jobs_skipped_no_skills,
         returned=len(result.matches),
         matches=[JobMatchOut(**vars(m)) for m in result.matches],

@@ -70,3 +70,13 @@ def get_current_active_user(current_user: User = Depends(get_current_user)) -> U
             detail="This account is inactive",
         )
     return current_user
+
+
+def get_current_admin(current_user: User = Depends(get_current_active_user)) -> User:
+    """Only lets through accounts whose role is admin."""
+    if current_user.role != "admin":
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail="This area is for administrators only",
+        )
+    return current_user
