@@ -23,17 +23,17 @@ export default function JobCard({ job }) {
     <Card className="lift group flex h-full flex-col p-5 sm:p-6">
       <div className="flex items-start justify-between gap-4">
         <div className="min-w-0">
-          <h3 className="font-display text-h3 font-semibold leading-snug text-ink">
+          <h3 className="wrap-anywhere font-display text-h3 font-semibold leading-snug text-ink">
             {job.title}
           </h3>
 
           <div className="mt-2.5 flex flex-wrap items-center gap-x-4 gap-y-1.5 text-small text-muted">
-            <span className="inline-flex items-center gap-1.5">
+            <span className="inline-flex min-w-0 max-w-full items-center gap-1.5">
               <Building2 size={14} strokeWidth={2} aria-hidden="true" className="shrink-0 text-faint" />
               <span className="truncate">{job.company_name || "Company not listed"}</span>
             </span>
             {job.location && (
-              <span className="inline-flex items-center gap-1.5">
+              <span className="inline-flex min-w-0 max-w-full items-center gap-1.5">
                 <MapPin size={14} strokeWidth={2} aria-hidden="true" className="shrink-0 text-faint" />
                 <span className="truncate">{job.location}</span>
               </span>

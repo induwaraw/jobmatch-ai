@@ -42,35 +42,35 @@ const SORTS = {
 
 function JobCard({ job }) {
   return (
-    <Card as="article" className="p-6 sm:p-7">
+    <Card as="article" className="p-5 sm:p-7">
       <div className="flex flex-col gap-5 sm:flex-row sm:items-start sm:gap-7">
         <ScoreRing value={job.match_score} size={78} />
 
         <div className="min-w-0 flex-1">
-          <h3 className="font-display text-[1.3rem] font-semibold leading-snug text-ink">
+          <h3 className="wrap-anywhere font-display text-h3 font-semibold text-ink">
             {job.title}
           </h3>
 
-          <div className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-1.5 text-[0.95rem] text-muted">
-            <span className="inline-flex items-center gap-1.5">
-              <Building2 size={15} strokeWidth={2} aria-hidden="true" />
-              {job.company_name || "Company not listed"}
+          <div className="mt-2 flex flex-wrap items-start gap-x-4 gap-y-1.5 text-body text-muted">
+            <span className="inline-flex min-w-0 max-w-full items-start gap-1.5">
+              <Building2 size={15} strokeWidth={2} aria-hidden="true" className="mt-1 shrink-0" />
+              <span className="wrap-anywhere">{job.company_name || "Company not listed"}</span>
             </span>
             {job.location && (
-              <span className="inline-flex items-center gap-1.5">
-                <MapPin size={15} strokeWidth={2} aria-hidden="true" />
-                {job.location}
+              <span className="inline-flex min-w-0 max-w-full items-start gap-1.5">
+                <MapPin size={15} strokeWidth={2} aria-hidden="true" className="mt-1 shrink-0" />
+                <span className="wrap-anywhere">{job.location}</span>
               </span>
             )}
           </div>
 
           <div className="mt-3 flex flex-wrap items-center gap-2">
             {job.subcategory && (
-              <span className="rounded-[6px] border border-line px-2 py-1 text-[0.8rem] text-muted">
+              <span className="rounded-[6px] border border-line px-2 py-1 text-micro text-muted">
                 {job.subcategory}
               </span>
             )}
-            <span className="text-[0.8rem] text-muted">
+            <span className="text-micro text-muted">
               {job.matched_count} of {job.job_skill_count} required skills matched
             </span>
           </div>
@@ -161,12 +161,12 @@ export default function Matches() {
 
   if (loading) {
     return (
-      <Container className="py-14 lg:py-20">
+      <Container className="py-12 sm:py-14 lg:py-20">
         <div className="max-w-2xl">
-          <h1 className="font-display text-[2.1rem] font-semibold leading-tight text-ink">
+          <h1 className="font-display text-h1 font-semibold text-ink">
             Matching your CV
           </h1>
-          <p className="mt-4 text-[1.0625rem] leading-[1.7] text-muted">
+          <p className="mt-4 text-lead text-muted">
             Reading your skills and scoring them against every open vacancy.
             This takes a moment the first time.
           </p>
@@ -191,12 +191,12 @@ export default function Matches() {
 
   if (error) {
     return (
-      <Container className="py-14 lg:py-20">
+      <Container className="py-12 sm:py-14 lg:py-20">
         <div className="max-w-2xl">
-          <h1 className="font-display text-[2.1rem] font-semibold leading-tight text-ink">
+          <h1 className="font-display text-h1 font-semibold text-ink">
             We could not show these matches
           </h1>
-          <p className="mt-4 rounded-[8px] border border-accent/30 bg-accent-soft px-4 py-3 text-sm text-accent">
+          <p className="mt-4 rounded-[8px] border border-accent/30 bg-accent-soft px-4 py-3 text-small text-accent">
             {error}
           </p>
           <div className="mt-8">
@@ -210,16 +210,16 @@ export default function Matches() {
   return (
     <Container className="py-14 lg:py-20">
       <div className="max-w-3xl">
-        <Link to="/upload" className="text-sm text-muted underline underline-offset-4">
+        <Link to="/upload" className="text-small text-muted underline underline-offset-4">
           Your CVs
         </Link>
 
-        <h1 className="mt-4 font-display text-[2.1rem] font-semibold leading-tight tracking-[-0.01em] text-ink">
+        <h1 className="mt-4 font-display text-h1 font-semibold text-ink">
           Your matches
         </h1>
 
         {data?.cv_subcategory ? (
-          <p className="mt-4 text-[1.0625rem] leading-[1.7] text-muted">
+          <p className="mt-4 text-lead text-muted">
             Based on your CV, you look like a{" "}
             <span className="font-medium text-ink">{data.cv_subcategory}</span>{" "}
             profile. We found{" "}
@@ -227,14 +227,14 @@ export default function Matches() {
             known skills in it.
           </p>
         ) : (
-          <p className="mt-4 text-[1.0625rem] leading-[1.7] text-muted">
+          <p className="mt-4 text-lead text-muted">
             We could not place your CV into one of the six IT areas, so matches
             are ranked on skill overlap alone.
           </p>
         )}
       </div>
 
-      <div className="mt-8 flex flex-wrap gap-x-8 gap-y-2 border-y border-line py-4 text-sm text-muted">
+      <div className="mt-8 flex flex-wrap gap-x-8 gap-y-2 border-y border-line py-4 text-small text-muted">
         <span>
           <span className="font-medium text-ink">{data?.jobs_considered ?? 0}</span>{" "}
           open vacancies considered
@@ -257,7 +257,7 @@ export default function Matches() {
           <div className="lg:flex-1">
             <label
               htmlFor="match-search"
-              className="block text-sm font-medium text-ink"
+              className="block text-small font-medium text-ink"
             >
               Search
             </label>
@@ -274,7 +274,7 @@ export default function Matches() {
                 value={query}
                 onChange={(event) => setQuery(event.target.value)}
                 placeholder="Job title or company"
-                className="h-11 w-full rounded-[8px] border border-line bg-panel pl-9 pr-3 text-[0.95rem]
+                className="h-11 w-full rounded-[8px] border border-line bg-panel pl-9 pr-3 text-body
                            text-ink placeholder:text-muted/60 focus:border-brand focus:outline-none
                            focus:ring-2 focus:ring-brand/25"
               />
@@ -284,7 +284,7 @@ export default function Matches() {
           <div className="lg:w-56">
             <label
               htmlFor="match-subcategory"
-              className="flex items-center gap-1.5 text-sm font-medium text-ink"
+              className="flex items-center gap-1.5 text-small font-medium text-ink"
             >
               <SlidersHorizontal size={15} strokeWidth={2} aria-hidden="true" />
               Area
@@ -293,7 +293,7 @@ export default function Matches() {
               id="match-subcategory"
               value={subcategory}
               onChange={(event) => setSubcategory(event.target.value)}
-              className="mt-2 h-11 w-full rounded-[8px] border border-line bg-panel px-3 text-[0.95rem]
+              className="mt-2 h-11 w-full rounded-[8px] border border-line bg-panel px-3 text-body
                          text-ink focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand/25"
             >
               <option value="all">All areas</option>
@@ -308,7 +308,7 @@ export default function Matches() {
           <div className="lg:w-60">
             <label
               htmlFor="match-sort"
-              className="flex items-center gap-1.5 text-sm font-medium text-ink"
+              className="flex items-center gap-1.5 text-small font-medium text-ink"
             >
               <ArrowUpDown size={15} strokeWidth={2} aria-hidden="true" />
               Sort by
@@ -317,7 +317,7 @@ export default function Matches() {
               id="match-sort"
               value={sortKey}
               onChange={(event) => setSortKey(event.target.value)}
-              className="mt-2 h-11 w-full rounded-[8px] border border-line bg-panel px-3 text-[0.95rem]
+              className="mt-2 h-11 w-full rounded-[8px] border border-line bg-panel px-3 text-body
                          text-ink focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand/25"
             >
               {Object.entries(SORTS).map(([key, sort]) => (
@@ -330,7 +330,7 @@ export default function Matches() {
         </div>
 
         <div className="mt-5 flex flex-wrap items-center gap-3 border-t border-line pt-4">
-          <span className="text-sm font-medium text-ink">Minimum score</span>
+          <span className="text-small font-medium text-ink">Minimum score</span>
           <div className="flex flex-wrap gap-2">
             {SCORE_STEPS.map((step) => (
               <button
@@ -338,7 +338,7 @@ export default function Matches() {
                 type="button"
                 onClick={() => setMinScore(step)}
                 aria-pressed={minScore === step}
-                className={`h-9 rounded-[8px] border px-3 text-sm transition-colors ${
+                className={`h-9 rounded-[8px] border px-3 text-small transition-colors ${
                   minScore === step
                     ? "border-brand bg-brand text-surface"
                     : "border-line bg-panel text-muted hover:border-ink/30 hover:text-ink"
@@ -353,7 +353,7 @@ export default function Matches() {
             <button
               type="button"
               onClick={clearFilters}
-              className="ml-auto inline-flex items-center gap-1.5 text-sm text-muted underline underline-offset-4 hover:text-ink"
+              className="ml-auto inline-flex items-center gap-1.5 text-small text-muted underline underline-offset-4 hover:text-ink"
             >
               <X size={14} strokeWidth={2} aria-hidden="true" />
               Clear filters
@@ -362,17 +362,17 @@ export default function Matches() {
         </div>
       </Card>
 
-      <p className="mt-6 text-sm text-muted">
+      <p className="mt-6 text-small text-muted">
         Showing <span className="font-medium text-ink">{visible.length}</span> of{" "}
         <span className="font-medium text-ink">{all.length}</span> matches
       </p>
 
       {all.length === 0 ? (
-        <Card className="mt-6 p-8">
-          <h2 className="font-display text-xl font-semibold text-ink">
+        <Card className="mt-6 p-6 sm:p-8">
+          <h2 className="font-display text-h3 font-semibold text-ink">
             No matches to show yet
           </h2>
-          <p className="mt-3 max-w-xl text-[0.95rem] leading-relaxed text-muted">
+          <p className="mt-3 max-w-xl text-body leading-relaxed text-muted">
             None of the open vacancies overlapped with the skills we found in
             this CV. That usually means the CV lists few named tools or
             technologies. Adding the specific languages, frameworks and
@@ -383,11 +383,11 @@ export default function Matches() {
           </div>
         </Card>
       ) : visible.length === 0 ? (
-        <Card className="mt-6 p-8">
-          <h2 className="font-display text-xl font-semibold text-ink">
+        <Card className="mt-6 p-6 sm:p-8">
+          <h2 className="font-display text-h3 font-semibold text-ink">
             Nothing matches these filters
           </h2>
-          <p className="mt-3 max-w-xl text-[0.95rem] leading-relaxed text-muted">
+          <p className="mt-3 max-w-xl text-body leading-relaxed text-muted">
             Try a different search term, widen the area, or lower the minimum
             score.
           </p>
@@ -406,7 +406,7 @@ export default function Matches() {
       )}
 
       {all.length > 0 && (
-        <p className="mt-10 max-w-2xl text-sm leading-relaxed text-muted">
+        <p className="mt-10 max-w-2xl text-small leading-relaxed text-muted">
           Scores combine how many of a role's named skills your CV has with
           whether the role sits in your area of IT. They are a guide for
           prioritising applications, not a decision about your suitability.

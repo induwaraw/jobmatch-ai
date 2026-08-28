@@ -84,7 +84,7 @@ export default function Landing() {
         />
 
         <Container className="relative py-14 sm:py-20 lg:py-24">
-          <div className="grid items-center gap-12 lg:grid-cols-[1.06fr_0.94fr] lg:gap-16">
+          <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-[minmax(0,1.06fr)_minmax(0,0.94fr)] lg:gap-16">
             <div className="animate-fade-up">
               <span className="inline-flex items-center gap-2 rounded-full border border-line bg-panel/80 px-3 py-1.5 text-micro font-semibold uppercase tracking-[0.13em] text-accent backdrop-blur">
                 <ShieldCheck size={13} strokeWidth={2.5} aria-hidden="true" />
@@ -172,7 +172,7 @@ export default function Landing() {
             </h2>
           </Reveal>
 
-          <div className="mt-12 grid gap-5 lg:grid-cols-3">
+          <div className="mt-12 grid grid-cols-1 gap-5 lg:grid-cols-3">
             {DIFFERENTIATORS.map((item, index) => (
               <Reveal key={item.title} delay={index * 110}>
                 <Card
@@ -211,7 +211,7 @@ export default function Landing() {
 
       <section className="border-b border-line">
         <Container className="py-16 lg:py-20">
-          <div className="grid gap-12 lg:grid-cols-[1fr_0.88fr] lg:items-center lg:gap-16">
+          <div className="grid grid-cols-1 gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.88fr)] lg:items-center lg:gap-16">
             <Reveal>
               <p className="text-micro font-semibold uppercase tracking-[0.16em] text-accent">
                 The second model
@@ -259,7 +259,7 @@ export default function Landing() {
                 key={step.number}
                 as="article"
                 delay={index * 90}
-                className="grid gap-x-10 gap-y-4 py-10 md:grid-cols-[auto_1fr] lg:gap-x-16"
+                className="grid grid-cols-1 gap-x-10 gap-y-4 py-10 md:grid-cols-[auto_minmax(0,1fr)] lg:gap-x-16"
               >
                 <div className="font-display text-h2 font-semibold leading-none text-accent/85 md:w-20">
                   {step.number}

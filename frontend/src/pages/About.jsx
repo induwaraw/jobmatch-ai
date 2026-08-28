@@ -103,7 +103,7 @@ export default function About() {
       </section>
 
       <Container className="py-14 lg:py-18">
-        <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
+        <div className="grid grid-cols-1 gap-12 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:gap-16">
           <Reveal>
             <h2 className="font-display text-h2 font-semibold text-ink">Who it is for</h2>
           </Reveal>
@@ -132,7 +132,7 @@ export default function About() {
             </p>
           </Reveal>
 
-          <div className="mt-10 grid gap-5 md:grid-cols-3">
+          <div className="mt-10 grid grid-cols-1 gap-5 md:grid-cols-3">
             {MODELS.map((model, index) => (
               <Reveal key={model.name} delay={index * 100}>
                 <Card className="flex h-full flex-col p-6">
@@ -156,7 +156,7 @@ export default function About() {
       </section>
 
       <Container className="py-14 lg:py-18">
-        <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
+        <div className="grid grid-cols-1 gap-12 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:gap-16">
           <Reveal>
             <h2 className="inline-flex items-center gap-2.5 font-display text-h2 font-semibold text-ink">
               <MapPin size={22} strokeWidth={2} className="text-accent" aria-hidden="true" />
@@ -195,7 +195,7 @@ export default function About() {
             </p>
           </Reveal>
 
-          <div className="mt-10 grid gap-5 md:grid-cols-3">
+          <div className="mt-10 grid grid-cols-1 gap-5 md:grid-cols-3">
             {SCOPE.map((item, index) => (
               <Reveal key={item.heading} delay={index * 100}>
                 <Card tone="tint" className="h-full p-6">

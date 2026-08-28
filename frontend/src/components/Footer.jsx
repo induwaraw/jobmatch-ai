@@ -35,7 +35,7 @@ export default function Footer() {
   return (
     <footer className="mt-24 border-t border-line bg-panel/50">
       <Container className="py-14 lg:py-16">
-        <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr] lg:gap-16">
+        <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-[minmax(0,1.5fr)_minmax(0,1fr)_minmax(0,1fr)] lg:gap-16">
           <div className="max-w-sm">
             <Logo size="lg" />
             <p className="mt-5 text-small leading-relaxed text-muted">

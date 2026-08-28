@@ -58,7 +58,7 @@ export default function ConfirmDialog({
             >
               {title}
             </h2>
-            <p className="mt-2 text-body leading-relaxed text-muted">{body}</p>
+            <p className="mt-2 break-words text-body leading-relaxed text-muted">{body}</p>
           </div>
           <button
             type="button"

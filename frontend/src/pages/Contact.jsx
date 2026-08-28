@@ -38,7 +38,7 @@ export default function Contact() {
 
   return (
     <Container className="py-14 lg:py-20">
-      <div className="grid gap-12 lg:grid-cols-[1fr_0.8fr] lg:gap-20">
+      <div className="grid grid-cols-1 gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.8fr)] lg:gap-20">
         <Reveal className="max-w-xl">
           <p className="text-[0.78rem] font-semibold uppercase tracking-[0.16em] text-accent">
             Contact

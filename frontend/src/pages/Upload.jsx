@@ -129,7 +129,7 @@ export default function Upload() {
         </p>
       </Reveal>
 
-      <div className="mt-10 grid gap-8 lg:grid-cols-[1.15fr_0.85fr] lg:gap-12">
+      <div className="mt-10 grid grid-cols-1 gap-8 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)] lg:gap-12">
         <Reveal>
           <div
             onDragOver={(event) => {
@@ -221,8 +221,8 @@ export default function Upload() {
                   <span className="grid h-11 w-11 shrink-0 place-items-center rounded-[10px] border border-line bg-panel">
                     <FileText size={19} strokeWidth={1.9} className="text-muted" aria-hidden="true" />
                   </span>
-                  <div className="min-w-0">
-                    <h2 className="truncate font-display text-h3 font-semibold text-ink">
+                  <div className="min-w-0 flex-1">
+                    <h2 className="wrap-anywhere font-display text-h3 font-semibold text-ink">
                       {result.filename}
                     </h2>
                     <p className="mt-1 text-small text-muted">
@@ -236,7 +236,7 @@ export default function Upload() {
                   <p className="text-micro font-semibold uppercase tracking-[0.1em] text-muted">
                     What we read
                   </p>
-                  <p className="mt-2.5 whitespace-pre-line text-small leading-relaxed text-muted">
+                  <p className="mt-2.5 whitespace-pre-line break-words text-small leading-relaxed text-muted">
                     {result.preview}
                     {result.character_count > result.preview.length && "..."}
                   </p>
@@ -254,10 +254,12 @@ export default function Upload() {
         </Reveal>
 
         <Reveal delay={90}>
-          <div className="flex items-baseline justify-between gap-4">
-            <h2 className="font-display text-h3 font-semibold text-ink">Your CVs</h2>
+          <div className="flex items-baseline justify-between gap-3">
+            <h2 className="min-w-0 font-display text-h3 font-semibold text-ink">Your CVs</h2>
             {!listLoading && cvs.length > 0 && (
-              <span className="text-small text-muted">{cvs.length} stored</span>
+              <span className="shrink-0 whitespace-nowrap text-small text-muted">
+                {cvs.length} stored
+              </span>
             )}
           </div>
 
@@ -294,34 +296,34 @@ export default function Upload() {
                       </span>
 
                       <div className="min-w-0 flex-1">
-                        <p className="truncate text-small font-semibold text-ink">
+                        <p className="wrap-anywhere text-small font-semibold leading-snug text-ink">
                           {cv.filename}
                         </p>
-                        <p className="mt-1 text-micro text-muted">
+                        <p className="mt-1.5 text-micro text-muted">
                           {formatDate(cv.uploaded_at)}
                         </p>
                         <p className="mt-0.5 text-micro text-faint">
                           {cv.character_count.toLocaleString()} characters
                         </p>
-
-                        <div className="mt-3 flex items-center gap-3">
-                          <Link
-                            to={`/matches/${cv.id}`}
-                            className="inline-flex items-center gap-1 text-micro font-semibold text-brand underline underline-offset-4 hover:text-brand-hover"
-                          >
-                            See matches
-                            <ArrowRight size={12} strokeWidth={2.5} aria-hidden="true" />
-                          </Link>
-                          <button
-                            type="button"
-                            onClick={() => setPendingDelete(cv)}
-                            className="inline-flex items-center gap-1 text-micro font-medium text-faint transition-colors hover:text-accent"
-                          >
-                            <Trash2 size={12} strokeWidth={2.25} aria-hidden="true" />
-                            Delete
-                          </button>
-                        </div>
                       </div>
+                    </div>
+
+                    <div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-2 border-t border-line pt-3">
+                      <Link
+                        to={`/matches/${cv.id}`}
+                        className="inline-flex items-center gap-1 text-micro font-semibold text-brand underline underline-offset-4 hover:text-brand-hover"
+                      >
+                        See matches
+                        <ArrowRight size={12} strokeWidth={2.5} aria-hidden="true" />
+                      </Link>
+                      <button
+                        type="button"
+                        onClick={() => setPendingDelete(cv)}
+                        className="inline-flex items-center gap-1 text-micro font-medium text-faint transition-colors hover:text-accent"
+                      >
+                        <Trash2 size={12} strokeWidth={2.25} aria-hidden="true" />
+                        Delete
+                      </button>
                     </div>
                   </Card>
                 </li>

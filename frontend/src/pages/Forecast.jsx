@@ -89,7 +89,9 @@ function TrendBadge({ trend }) {
   const style = TRENDS[trend];
   const Icon = style.icon;
   return (
-    <span className={`inline-flex items-center gap-1.5 text-sm font-medium ${style.text}`}>
+    <span
+      className={`inline-flex shrink-0 items-center gap-1.5 whitespace-nowrap text-small font-medium ${style.text}`}
+    >
       <Icon size={16} strokeWidth={2.25} aria-hidden="true" />
       {style.label}
     </span>
@@ -103,30 +105,30 @@ function AreaCard({ entry, months, selected, onToggleCompare }) {
   const style = TRENDS[key];
 
   return (
-    <Card className="flex flex-col p-6">
-      <div className="flex items-start justify-between gap-4">
-        <h3 className="font-display text-[1.15rem] font-semibold leading-snug text-ink">
+    <Card className="flex flex-col p-5 sm:p-6">
+      <div className="flex items-start justify-between gap-3">
+        <h3 className="min-w-0 wrap-anywhere font-display text-h3 font-semibold text-ink">
           {entry.subcategory}
         </h3>
         <TrendBadge trend={key} />
       </div>
-      <p className={`mt-4 font-display text-[2.25rem] font-semibold leading-none ${style.text}`}>
+      <p className={`mt-4 font-display text-h2 font-semibold ${style.text}`}>
         {formatPct(row?.pct_change)}
       </p>
-      <p className="mt-1.5 text-sm text-muted">projected over {months} months</p>
+      <p className="mt-1.5 text-small text-muted">projected over {months} months</p>
 
-      <p className="mt-4 text-[0.95rem] leading-relaxed text-ink">
+      <p className="mt-4 text-body leading-relaxed text-ink">
         {takeaway(entry.subcategory, row, months)}
       </p>
       <p
-        className="mt-4 border-t border-line pt-4 text-sm text-muted"
+        className="mt-4 border-t border-line pt-4 text-small text-muted"
         title="Index relative to a 2015 baseline, higher means more demand"
       >
         Index {entry.current_demand?.toFixed(1)} now to{" "}
         {row?.predicted_demand?.toFixed(1)} projected
       </p>
 
-      <label className="mt-4 inline-flex cursor-pointer items-center gap-2 text-sm text-muted">
+      <label className="mt-4 inline-flex cursor-pointer items-center gap-2 text-small text-muted">
         <input
           type="checkbox"
           checked={selected}
@@ -166,6 +168,15 @@ export default function Forecast() {
   const [sortKey, setSortKey] = useState("change");
   const [compare, setCompare] = useState([]);
   const [showHelp, setShowHelp] = useState(false);
+  const [compact, setCompact] = useState(false);
+
+  useEffect(() => {
+    const query = window.matchMedia("(max-width: 639px)");
+    const sync = () => setCompact(query.matches);
+    sync();
+    query.addEventListener("change", sync);
+    return () => query.removeEventListener("change", sync);
+  }, []);
 
   useEffect(() => {
     let cancelled = false;
@@ -233,15 +244,15 @@ export default function Forecast() {
   }
 
   return (
-    <Container className="py-14 lg:py-20">
+    <Container className="py-12 sm:py-14 lg:py-20">
       <div className="max-w-3xl">
-        <p className="text-[0.78rem] font-semibold uppercase tracking-[0.16em] text-accent">
+        <p className="text-micro font-semibold uppercase tracking-[0.16em] text-accent">
           Market demand
         </p>
-        <h1 className="mt-4 font-display text-[2.1rem] font-semibold leading-tight tracking-[-0.01em] text-ink">
+        <h1 className="mt-4 font-display text-h1 font-semibold text-ink">
           Where IT demand is heading
         </h1>
-        <p className="mt-4 text-[1.0625rem] leading-[1.7] text-muted">
+        <p className="mt-4 text-lead text-muted">
           Which areas of IT work are growing, holding steady or cooling off, six
           and twelve months ahead.
         </p>
@@ -250,7 +261,7 @@ export default function Forecast() {
       {loading && <p className="mt-10 text-muted">Loading forecasts...</p>}
 
       {error && (
-        <p className="mt-10 rounded-[8px] border border-accent/30 bg-accent-soft px-4 py-3 text-sm text-accent">
+        <p className="mt-10 rounded-[8px] border border-accent/30 bg-accent-soft px-4 py-3 text-small text-accent">
           {error}
         </p>
       )}
@@ -260,7 +271,7 @@ export default function Forecast() {
           <Card className="mt-10 p-4 sm:p-5">
             <div className="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between lg:gap-8">
               <div>
-                <span className="block text-sm font-medium text-ink">Time horizon</span>
+                <span className="block text-small font-medium text-ink">Time horizon</span>
                 <div className="mt-2 inline-flex rounded-[8px] border border-line p-1">
                   {HORIZONS.map((value) => (
                     <button
@@ -268,7 +279,7 @@ export default function Forecast() {
                       type="button"
                       onClick={() => setMonths(value)}
                       aria-pressed={months === value}
-                      className={`h-9 rounded-[6px] px-4 text-sm transition-colors ${
+                      className={`h-9 rounded-[6px] px-4 text-small transition-colors ${
                         months === value
                           ? "bg-brand text-surface"
                           : "text-muted hover:text-ink"
@@ -281,7 +292,7 @@ export default function Forecast() {
               </div>
 
               <div>
-                <span className="block text-sm font-medium text-ink">Show</span>
+                <span className="block text-small font-medium text-ink">Show</span>
                 <div className="mt-2 flex flex-wrap gap-2">
                   {FILTERS.map((item) => (
                     <button
@@ -289,7 +300,7 @@ export default function Forecast() {
                       type="button"
                       onClick={() => setFilter(item.key)}
                       aria-pressed={filter === item.key}
-                      className={`h-9 rounded-[8px] border px-3 text-sm transition-colors ${
+                      className={`h-9 rounded-[8px] border px-3 text-small transition-colors ${
                         filter === item.key
                           ? "border-brand bg-brand text-surface"
                           : "border-line bg-panel text-muted hover:border-ink/30 hover:text-ink"
@@ -304,7 +315,7 @@ export default function Forecast() {
               <div className="lg:w-56">
                 <label
                   htmlFor="forecast-sort"
-                  className="flex items-center gap-1.5 text-sm font-medium text-ink"
+                  className="flex items-center gap-1.5 text-small font-medium text-ink"
                 >
                   <ArrowUpDown size={15} strokeWidth={2} aria-hidden="true" />
                   Sort by
@@ -313,7 +324,7 @@ export default function Forecast() {
                   id="forecast-sort"
                   value={sortKey}
                   onChange={(event) => setSortKey(event.target.value)}
-                  className="mt-2 h-11 w-full rounded-[8px] border border-line bg-panel px-3 text-[0.95rem]
+                  className="mt-2 h-11 w-full rounded-[8px] border border-line bg-panel px-3 text-body
                              text-ink focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand/25"
                 >
                   {Object.entries(SORTS).map(([key, label]) => (
@@ -326,17 +337,17 @@ export default function Forecast() {
             </div>
           </Card>
 
-          <p className="mt-6 text-sm text-muted">
+          <p className="mt-6 text-small text-muted">
             Showing <span className="font-medium text-ink">{visible.length}</span> of{" "}
             <span className="font-medium text-ink">{decorated.length}</span> areas
           </p>
 
           {visible.length === 0 ? (
-            <Card className="mt-6 p-8">
-              <h2 className="font-display text-xl font-semibold text-ink">
+            <Card className="mt-6 p-6 sm:p-8">
+              <h2 className="font-display text-h3 font-semibold text-ink">
                 No areas in that category
               </h2>
-              <p className="mt-3 max-w-xl text-[0.95rem] leading-relaxed text-muted">
+              <p className="mt-3 max-w-xl text-body leading-relaxed text-muted">
                 Nothing is currently {FILTERS.find((f) => f.key === filter)?.label.toLowerCase()} at
                 this horizon. Try a different filter or switch between six and
                 twelve months.
@@ -348,7 +359,7 @@ export default function Forecast() {
               </div>
             </Card>
           ) : (
-            <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {visible.map((item) => (
                 <AreaCard
                   key={item.name}
@@ -361,14 +372,14 @@ export default function Forecast() {
             </div>
           )}
           {compare.length > 0 && (
-            <Card className="mt-8 p-6 sm:p-7">
+            <Card className="mt-8 p-5 sm:p-7">
               <div className="flex flex-wrap items-start justify-between gap-4">
                 <div>
-                  <h2 className="font-display text-lg font-semibold text-ink">
+                  <h2 className="font-display text-h3 font-semibold text-ink">
                     Comparing {compare.length}{" "}
                     {compare.length === 1 ? "area" : "areas"}
                   </h2>
-                  <p className="mt-2 text-sm text-muted">
+                  <p className="mt-2 text-small text-muted">
                     {compare.length === 1
                       ? "Tick a second area to compare them side by side."
                       : "Side by side at the selected horizon."}
@@ -377,7 +388,7 @@ export default function Forecast() {
                 <button
                   type="button"
                   onClick={() => setCompare([])}
-                  className="inline-flex items-center gap-1.5 text-sm text-muted underline underline-offset-4 hover:text-ink"
+                  className="inline-flex items-center gap-1.5 text-small text-muted underline underline-offset-4 hover:text-ink"
                 >
                   <X size={14} strokeWidth={2} aria-hidden="true" />
                   Clear selection
@@ -387,7 +398,7 @@ export default function Forecast() {
               <div className="mt-5 overflow-x-auto">
                 <table className="w-full min-w-[560px] border-collapse text-left">
                   <thead>
-                    <tr className="border-b border-line text-sm text-muted">
+                    <tr className="border-b border-line text-small text-muted">
                       <th className="py-2 pr-4 font-medium">Area</th>
                       <th className="py-2 pr-4 font-medium">Trend</th>
                       <th className="py-2 pr-4 font-medium">Now</th>
@@ -427,42 +438,46 @@ export default function Forecast() {
               </div>
             </Card>
           )}
-          <Card className="mt-8 p-6 sm:p-7">
-            <h2 className="font-display text-lg font-semibold text-ink">
+          <Card className="mt-8 p-5 sm:p-7">
+            <h2 className="font-display text-h3 font-semibold text-ink">
               Projected change in demand, next {months} months
             </h2>
-            <p className="mt-2 text-sm text-muted">
+            <p className="mt-2 text-small text-muted">
               Ranked from the biggest fall to the biggest rise. Bars to the right
               of the line are growing, bars to the left are cooling.
             </p>
 
-            <div className="mt-6 w-full" style={{ height: Math.max(240, chartRows.length * 54) }}>
+            <div
+              className="mt-6 w-full"
+              style={{ height: Math.max(240, chartRows.length * (compact ? 46 : 54)) }}
+            >
               <ResponsiveContainer width="100%" height="100%">
                 <BarChart
                   data={chartRows}
                   layout="vertical"
-                  margin={{ top: 8, right: 56, bottom: 28, left: 8 }}
+                  margin={{ top: 8, right: compact ? 36 : 56, bottom: 28, left: compact ? 0 : 8 }}
                 >
                   <CartesianGrid stroke={colors.line} horizontal={false} />
                   <XAxis
                     type="number"
                     domain={domain}
+                    tickCount={compact ? 4 : 6}
                     tickFormatter={(value) => `${value}%`}
-                    tick={{ fill: colors.muted, fontSize: 12 }}
+                    tick={{ fill: colors.muted, fontSize: compact ? 11 : 12 }}
                     stroke={colors.line}
                     label={{
                       value: "Change in demand (%)",
                       position: "insideBottom",
                       offset: -16,
                       fill: colors.muted,
-                      fontSize: 12,
+                      fontSize: compact ? 11 : 12,
                     }}
                   />
                   <YAxis
                     type="category"
                     dataKey="name"
-                    width={150}
-                    tick={{ fill: colors.ink, fontSize: 12 }}
+                    width={compact ? 112 : 150}
+                    tick={{ fill: colors.ink, fontSize: compact ? 11 : 12 }}
                     stroke={colors.line}
                   />
                   <Tooltip
@@ -476,7 +491,7 @@ export default function Forecast() {
                     formatter={(value) => [formatPct(value), `Change over ${months} months`]}
                   />
                   <ReferenceLine x={0} stroke={colors.ink} strokeWidth={1} />
-                  <Bar dataKey="change" barSize={22} radius={[3, 3, 3, 3]}>
+                  <Bar dataKey="change" barSize={compact ? 18 : 22} radius={[3, 3, 3, 3]}>
                     {chartRows.map((row) => (
                       <Cell key={row.name} fill={row.fill} />
                     ))}
@@ -493,7 +508,7 @@ export default function Forecast() {
               aria-expanded={showHelp}
               className="flex w-full items-center justify-between gap-4 p-5 text-left"
             >
-              <span className="inline-flex items-center gap-2 text-sm font-medium text-ink">
+              <span className="inline-flex items-center gap-2 text-small font-medium text-ink">
                 <Info size={16} strokeWidth={2} aria-hidden="true" />
                 How to read this
               </span>
@@ -506,7 +521,7 @@ export default function Forecast() {
             </button>
 
             {showHelp && (
-              <div className="space-y-3 border-t border-line p-5 text-sm leading-relaxed text-muted">
+              <div className="space-y-3 border-t border-line p-5 text-small leading-relaxed text-muted">
                 <p>
                   These figures are modelled from historical IT employment trends
                   used as a demand proxy, not from counts of Sri Lankan

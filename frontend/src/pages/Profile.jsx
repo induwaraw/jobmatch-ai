@@ -172,8 +172,8 @@ export default function Profile() {
                 </form>
               ) : (
                 <>
-                  <div className="flex flex-wrap items-center gap-3">
-                    <h1 className="font-display text-h1 font-semibold text-ink">
+                  <div className="flex flex-wrap items-center gap-x-3 gap-y-2.5">
+                    <h1 className="min-w-0 wrap-anywhere font-display text-h1 font-semibold text-ink">
                       {user?.full_name || "Your account"}
                     </h1>
                     <button
@@ -192,18 +192,18 @@ export default function Profile() {
                     )}
                   </div>
 
-                  <div className="mt-3 flex flex-wrap items-center gap-x-5 gap-y-2 text-small text-muted">
-                    <span className="inline-flex items-center gap-1.5">
-                      <Mail size={14} strokeWidth={2} aria-hidden="true" />
-                      {user?.email}
+                  <div className="mt-3 flex flex-wrap items-start gap-x-5 gap-y-2 text-small text-muted">
+                    <span className="inline-flex min-w-0 max-w-full items-start gap-1.5">
+                      <Mail size={14} strokeWidth={2} aria-hidden="true" className="mt-1 shrink-0" />
+                      <span className="break-all">{user?.email}</span>
                     </span>
-                    <span className="inline-flex items-center gap-1.5">
-                      <Shield size={14} strokeWidth={2} aria-hidden="true" />
+                    <span className="inline-flex items-start gap-1.5">
+                      <Shield size={14} strokeWidth={2} aria-hidden="true" className="mt-1 shrink-0" />
                       {user?.role === "admin" ? "Administrator" : "Standard account"}
                     </span>
                     {user?.created_at && (
-                      <span className="inline-flex items-center gap-1.5">
-                        <CalendarDays size={14} strokeWidth={2} aria-hidden="true" />
+                      <span className="inline-flex items-start gap-1.5">
+                        <CalendarDays size={14} strokeWidth={2} aria-hidden="true" className="mt-1 shrink-0" />
                         Joined {formatDate(user.created_at)}
                       </span>
                     )}
@@ -215,7 +215,7 @@ export default function Profile() {
         </Card>
       </Reveal>
 
-      <Reveal delay={70} className="mt-6 grid gap-4 sm:grid-cols-3">
+      <Reveal delay={70} className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-3">
         {[
           { label: "CVs uploaded", value: cvs.length },
           { label: "Text extracted", value: `${totalCharacters.toLocaleString()} chars` },
@@ -228,7 +228,9 @@ export default function Profile() {
             <p className="text-micro font-semibold uppercase tracking-[0.11em] text-muted">
               {item.label}
             </p>
-            <p className="mt-2 font-display text-h3 font-semibold text-ink">{item.value}</p>
+            <p className="mt-2 break-words font-display text-h3 font-semibold text-ink">
+              {item.value}
+            </p>
           </Card>
         ))}
       </Reveal>
@@ -267,7 +269,7 @@ export default function Profile() {
             </div>
           </Card>
         ) : (
-          <ul className="mt-6 grid gap-3 sm:grid-cols-2">
+          <ul className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2">
             {cvs.map((cv) => (
               <li key={cv.id}>
                 <Card className="lift flex h-full flex-col p-5">
@@ -276,8 +278,10 @@ export default function Profile() {
                       <FileText size={18} strokeWidth={1.9} className="text-brand" aria-hidden="true" />
                     </span>
                     <div className="min-w-0 flex-1">
-                      <p className="truncate text-small font-semibold text-ink">{cv.filename}</p>
-                      <p className="mt-1 text-micro text-muted">
+                      <p className="wrap-anywhere text-small font-semibold leading-snug text-ink">
+                        {cv.filename}
+                      </p>
+                      <p className="mt-1.5 text-micro text-muted">
                         {formatDate(cv.uploaded_at, true)}
                       </p>
                       <p className="mt-0.5 text-micro text-faint">
@@ -286,7 +290,7 @@ export default function Profile() {
                     </div>
                   </div>
 
-                  <div className="mt-4 flex items-center justify-between gap-3 border-t border-line pt-4">
+                  <div className="mt-4 flex flex-wrap items-center justify-between gap-x-4 gap-y-2 border-t border-line pt-4">
                     <Link
                       to={`/matches/${cv.id}`}
                       className="inline-flex items-center gap-1.5 text-small font-semibold text-brand underline underline-offset-4 hover:text-brand-hover"
@@ -325,7 +329,7 @@ export default function Profile() {
             </div>
             <Button
               variant="danger"
-              className="shrink-0"
+              className="w-full shrink-0 sm:w-auto"
               onClick={() => setConfirmAccount(true)}
             >
               <Trash2 size={15} strokeWidth={2.25} aria-hidden="true" />

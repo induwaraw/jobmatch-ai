@@ -36,7 +36,7 @@ function BreakdownBar({ rows }) {
       {rows.map((row) => (
         <li key={row.name}>
           <div className="flex items-baseline justify-between gap-4 text-sm">
-            <span className="text-ink">{row.name}</span>
+            <span className="min-w-0 wrap-anywhere text-ink">{row.name}</span>
             <span className="text-muted">
               {row.count.toLocaleString()}{" "}
               <span className="text-muted/70">
@@ -125,7 +125,7 @@ export default function Admin() {
 
       {stats && (
         <>
-          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
             <StatCard
               icon={Users}
               label="Registered users"
@@ -168,7 +168,7 @@ export default function Admin() {
             />
           </div>
 
-          <div className="mt-8 grid gap-4 lg:grid-cols-2">
+          <div className="mt-8 grid grid-cols-1 gap-4 lg:grid-cols-2">
             <Card className="p-6">
               <h2 className="font-display text-lg font-semibold text-ink">
                 Jobs by area
