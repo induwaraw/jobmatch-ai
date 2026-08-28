@@ -54,6 +54,13 @@ def _snippet(description: str | None) -> str:
     return f"{cut}..."
 
 
+def _dedup_key(title: str | None, company: str | None) -> tuple[str, str]:
+    return (
+        " ".join((title or "").split()).casefold(),
+        " ".join((company or "").split()).casefold(),
+    )
+
+
 def _label_expression():
     """The subcategory shown and filtered on: predicted first, scraped second."""
     return func.coalesce(Job.predicted_subcategory, Job.subcategory)
@@ -119,8 +126,17 @@ def list_jobs(
         reverse=True,
     )
 
-    total = len(with_skills)
-    page = with_skills[offset : offset + limit]
+    seen: set[tuple[str, str]] = set()
+    unique: list[tuple[Job, set[str]]] = []
+    for job, skills in with_skills:
+        key = _dedup_key(job.title, job.employer.name if job.employer else None)
+        if key in seen:
+            continue
+        seen.add(key)
+        unique.append((job, skills))
+
+    total = len(unique)
+    page = unique[offset : offset + limit]
 
     jobs = [
         JobSummary(
