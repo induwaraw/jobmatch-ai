@@ -25,8 +25,10 @@ import app.models  # noqa: E402, F401  (imported for its side effect of register
 # Alembic Config object, giving access to the values in alembic.ini
 config = context.config
 
-# Feed the real connection string in from the environment
-config.set_main_option("sqlalchemy.url", settings.DATABASE_URL)
+# Feed the real connection string in from the environment. sqlalchemy_url is
+# used rather than the raw value so that a managed database handing out a plain
+# mysql:// URL still migrates, the same as the application does at run time.
+config.set_main_option("sqlalchemy.url", settings.sqlalchemy_url)
 
 # Interpret the config file for Python logging
 if config.config_file_name is not None:
@@ -39,7 +41,7 @@ target_metadata = Base.metadata
 def run_migrations_offline() -> None:
     """Run migrations without a live connection, emitting SQL only."""
     context.configure(
-        url=settings.DATABASE_URL,
+        url=settings.sqlalchemy_url,
         target_metadata=target_metadata,
         literal_binds=True,
         dialect_opts={"paramstyle": "named"},
