@@ -1,27 +1,21 @@
-/**
- * The same design tokens as the @theme block in index.css, exported for the
- * places that need real values rather than class names, such as Recharts.
- *
- * If you change a colour, change it in both places.
- */
-
 export const colors = {
   ink: "#12211F",
+  inkSoft: "#2F4340",
   muted: "#5C6B66",
+  faint: "#8B9793",
   brand: "#0F3D3E",
   brandHover: "#0A2C2D",
   brandSoft: "#E6EFEC",
+  brandTint: "#F2F7F5",
   accent: "#C2571B",
+  accentHover: "#A8480F",
   accentSoft: "#FBEEE3",
   surface: "#FBFAF7",
   panel: "#FFFFFF",
-  line: "#E3DFD6",
+  line: "#E6E1D8",
+  lineStrong: "#D5CEC1",
 };
 
-/**
- * Chart series colours, ordered. Derived from the brand teal and the cinnamon
- * accent so charts belong to the same palette as the rest of the interface.
- */
 export const chartSeries = [
   "#0F3D3E",
   "#C2571B",
@@ -30,9 +24,3 @@ export const chartSeries = [
   "#6B8F89",
   "#B08968",
 ];
-
-/**
- * Spacing convention: Tailwind's scale is 4px based, so we use the even steps
- * (2, 4, 6, 8, 12, 16, 20, 24) to keep everything on an 8px rhythm.
- */
-export const spacingStep = 8;

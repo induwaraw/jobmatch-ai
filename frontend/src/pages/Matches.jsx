@@ -252,8 +252,6 @@ export default function Matches() {
           </span>
         )}
       </div>
-
-      {/* Toolbar: search, filters, sort */}
       <Card className="mt-8 p-4 sm:p-5">
         <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:gap-6">
           <div className="lg:flex-1">

@@ -16,7 +16,6 @@ export default function Login() {
   const [formError, setFormError] = useState("");
   const [submitting, setSubmitting] = useState(false);
 
-  // Send people back where they were headed before being asked to sign in
   const redirectTo = location.state?.from || "/";
 
   function update(field, value) {

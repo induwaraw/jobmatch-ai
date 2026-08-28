@@ -1,27 +1,31 @@
 import { Link } from "react-router-dom";
 
 const base =
-  "inline-flex items-center justify-center gap-2 rounded-[8px] font-medium " +
-  "transition-colors duration-150 disabled:opacity-55 disabled:cursor-not-allowed";
+  "inline-flex items-center justify-center gap-2 rounded-[10px] font-medium whitespace-nowrap " +
+  "transition-[background-color,border-color,color,box-shadow,transform] duration-200 " +
+  "active:translate-y-px disabled:pointer-events-none disabled:opacity-50";
 
 const variants = {
-  primary: "bg-brand text-surface hover:bg-brand-hover",
-  // Border over shadow, in keeping with the rest of the interface
-  secondary: "border border-line bg-panel text-ink hover:border-ink/30 hover:bg-brand-soft/40",
-  accent: "bg-accent text-white hover:brightness-95",
-  quiet: "text-ink hover:bg-brand-soft/60",
+  primary:
+    "bg-brand text-surface shadow-[0_1px_2px_rgba(18,33,31,0.16)] hover:bg-brand-hover " +
+    "hover:shadow-[0_4px_14px_-4px_rgba(15,61,62,0.5)]",
+  secondary:
+    "border border-line bg-panel text-ink shadow-[0_1px_2px_rgba(18,33,31,0.04)] " +
+    "hover:border-line-strong hover:bg-brand-tint",
+  accent:
+    "bg-accent text-white shadow-[0_1px_2px_rgba(18,33,31,0.16)] hover:bg-accent-hover " +
+    "hover:shadow-[0_4px_14px_-4px_rgba(194,87,27,0.5)]",
+  ghost: "text-ink hover:bg-brand-soft/60",
+  danger:
+    "border border-accent/35 bg-accent-soft text-accent hover:border-accent/60 hover:bg-accent/10",
 };
 
 const sizes = {
-  sm: "h-9 px-3 text-sm",
-  md: "h-11 px-5 text-[0.95rem]",
-  lg: "h-12 px-6 text-base",
+  sm: "h-9 px-3.5 text-small",
+  md: "h-11 px-5 text-body",
+  lg: "h-12 px-6 text-[1rem]",
 };
 
-/**
- * Renders a button, or a router Link when `to` is given, so navigation and
- * actions look identical without duplicating the styles.
- */
 export default function Button({
   variant = "primary",
   size = "md",
@@ -45,7 +49,7 @@ export default function Button({
 
   if (href) {
     return (
-      <a href={href} className={classes} {...props}>
+      <a className={classes} href={href} {...props}>
         {children}
       </a>
     );

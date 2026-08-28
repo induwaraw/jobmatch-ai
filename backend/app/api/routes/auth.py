@@ -1,7 +1,7 @@
 """Registration, login and the current user route."""
 
 from fastapi import APIRouter, Depends, HTTPException, status
-from sqlalchemy import select
+from sqlalchemy import func, select
 from sqlalchemy.exc import IntegrityError
 from sqlalchemy.orm import Session
 
@@ -9,8 +9,9 @@ from app.api.deps import get_current_active_user
 from app.core.security import create_access_token, hash_password, verify_password
 from app.db.session import get_db
 from app.models.user import User
+from app.models.cv import CV
 from app.schemas.token import Token
-from app.schemas.user import UserCreate, UserLogin, UserOut
+from app.schemas.user import DeletionResult, UserCreate, UserLogin, UserOut, UserUpdate
 
 router = APIRouter(prefix="/api/auth", tags=["auth"])
 
@@ -82,3 +83,34 @@ def login(payload: UserLogin, db: Session = Depends(get_db)) -> Token:
 def read_current_user(current_user: User = Depends(get_current_active_user)) -> User:
     """Return the details of whoever owns the token in the request."""
     return current_user
+
+
+@router.patch("/me", response_model=UserOut)
+def update_current_user(
+    payload: UserUpdate,
+    db: Session = Depends(get_db),
+    current_user: User = Depends(get_current_active_user),
+) -> User:
+    """Update the signed in user's own profile."""
+    current_user.full_name = payload.full_name.strip()
+    db.commit()
+    db.refresh(current_user)
+    return current_user
+
+
+@router.delete("/me", response_model=DeletionResult)
+def delete_current_user(
+    db: Session = Depends(get_db),
+    current_user: User = Depends(get_current_active_user),
+) -> DeletionResult:
+    """Delete the signed in user's account and everything attached to it."""
+    cv_count = int(
+        db.scalar(select(func.count()).select_from(CV).where(CV.user_id == current_user.id))
+        or 0
+    )
+    db.delete(current_user)
+    db.commit()
+    return DeletionResult(
+        detail="Your account and all of its data have been deleted.",
+        deleted_cvs=cv_count,
+    )

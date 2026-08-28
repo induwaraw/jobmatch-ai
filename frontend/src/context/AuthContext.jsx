@@ -1,12 +1,11 @@
-/**
- * Who is signed in, and the calls that change that.
- *
- * On first load, if a token is already in localStorage we ask /api/auth/me
- * whether it is still valid, so an expired token does not leave the interface
- * showing a logged in state that does not work.
- */
-
-import { createContext, useCallback, useContext, useEffect, useMemo, useState } from "react";
+import {
+  createContext,
+  useCallback,
+  useContext,
+  useEffect,
+  useMemo,
+  useState,
+} from "react";
 
 import { api, getToken, setToken } from "../lib/api";
 
@@ -29,7 +28,6 @@ export function AuthProvider({ children }) {
         if (!cancelled) setUser(response.data);
       })
       .catch(() => {
-        // The stored token is expired or invalid, so clear it
         setToken(null);
         if (!cancelled) setUser(null);
       })
@@ -57,7 +55,6 @@ export function AuthProvider({ children }) {
         email,
         password,
       });
-      // Registration does not return a token, so sign in straight after
       return login(email, password);
     },
     [login]
@@ -68,9 +65,31 @@ export function AuthProvider({ children }) {
     setUser(null);
   }, []);
 
+  const updateProfile = useCallback(async (fullName) => {
+    const { data } = await api.patch("/api/auth/me", { full_name: fullName });
+    setUser(data);
+    return data;
+  }, []);
+
+  const deleteAccount = useCallback(async () => {
+    const { data } = await api.delete("/api/auth/me");
+    setToken(null);
+    setUser(null);
+    return data;
+  }, []);
+
   const value = useMemo(
-    () => ({ user, loading, login, register, logout, isAuthenticated: Boolean(user) }),
-    [user, loading, login, register, logout]
+    () => ({
+      user,
+      loading,
+      login,
+      register,
+      logout,
+      updateProfile,
+      deleteAccount,
+      isAuthenticated: Boolean(user),
+    }),
+    [user, loading, login, register, logout, updateProfile, deleteAccount]
   );
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;

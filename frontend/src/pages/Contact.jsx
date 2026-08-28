@@ -7,7 +7,6 @@ import Card from "../components/ui/Card";
 import Container from "../components/ui/Container";
 import Input from "../components/ui/Input";
 
-// Placeholders. Replace these with real details before submission.
 const DETAILS = [
   { icon: Mail, label: "Email", value: "your.email@example.com" },
   { icon: GraduationCap, label: "Institution", value: "Cardiff Metropolitan University / ICBT" },
@@ -78,7 +77,7 @@ export default function Contact() {
                 >
                   Send another
                 </Button>
-                <Button to="/" variant="quiet">
+                <Button to="/" variant="ghost">
                   Back to the homepage
                 </Button>
               </div>

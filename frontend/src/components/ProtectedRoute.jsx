@@ -1,21 +1,20 @@
 import { Navigate, Outlet, useLocation } from "react-router-dom";
+import { Loader2 } from "lucide-react";
 
 import { useAuth } from "../context/AuthContext";
 import Container from "./ui/Container";
 
-/**
- * Gate for the signed in screens. While the stored token is being checked we
- * hold the layout rather than flashing the login page at someone who is in
- * fact signed in.
- */
 export default function ProtectedRoute() {
   const { isAuthenticated, loading } = useAuth();
   const location = useLocation();
 
   if (loading) {
     return (
-      <Container className="py-20">
-        <p className="text-muted">Checking your session...</p>
+      <Container className="py-24">
+        <p className="inline-flex items-center gap-2.5 text-muted">
+          <Loader2 size={17} strokeWidth={2} className="animate-spin" aria-hidden="true" />
+          Checking your session...
+        </p>
       </Container>
     );
   }

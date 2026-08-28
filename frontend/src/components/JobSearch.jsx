@@ -19,10 +19,6 @@ const SUBCATEGORIES = [
 
 const PAGE_SIZE = 6;
 
-/**
- * The live vacancy search on the homepage. Reads its initial state from the
- * URL, so the navbar search can link straight here with a query applied.
- */
 export default function JobSearch() {
   const [params, setParams] = useSearchParams();
 
@@ -60,7 +56,6 @@ export default function JobSearch() {
     []
   );
 
-  // Re-run whenever the URL changes, which covers the navbar search too
   useEffect(() => {
     const urlQuery = params.get("q") || "";
     const urlArea = params.get("area") || "all";

@@ -66,6 +66,28 @@ async def upload_cv(
     )
 
 
+@router.delete("/{cv_id}", status_code=status.HTTP_204_NO_CONTENT)
+def delete_cv(
+    cv_id: int,
+    db: Session = Depends(get_db),
+    current_user: User = Depends(get_current_active_user),
+) -> None:
+    """Delete one of the current user's CVs and its extracted data."""
+    cv = db.get(CV, cv_id)
+    if cv is None:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND, detail="CV not found"
+        )
+    if cv.user_id != current_user.id:
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail="This CV belongs to another user",
+        )
+
+    db.delete(cv)
+    db.commit()
+
+
 @router.get("/mine", response_model=list[CVSummary])
 def list_my_cvs(
     db: Session = Depends(get_db),

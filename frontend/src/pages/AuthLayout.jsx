@@ -3,11 +3,6 @@ import { Link } from "react-router-dom";
 import Card from "../components/ui/Card";
 import Container from "../components/ui/Container";
 
-/**
- * Shared frame for the sign in and sign up screens. The form sits on the left
- * with a short piece of context on the right, so the page is not one lonely
- * centred box.
- */
 export default function AuthLayout({ eyebrow, title, intro, aside, footer, children }) {
   return (
     <Container className="py-14 lg:py-20">

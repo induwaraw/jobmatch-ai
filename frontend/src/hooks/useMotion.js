@@ -1,8 +1,3 @@
-/**
- * Small motion helpers. Everything here checks prefers-reduced-motion first
- * and degrades to the finished state rather than animating.
- */
-
 import { useEffect, useRef, useState } from "react";
 
 export function usePrefersReducedMotion() {
@@ -22,10 +17,6 @@ export function usePrefersReducedMotion() {
   return reduced;
 }
 
-/**
- * Reveals an element once it scrolls into view. Fires a single time, so
- * content does not flicker when scrolling back up.
- */
 export function useReveal({ threshold = 0.15, rootMargin = "0px 0px -60px 0px" } = {}) {
   const ref = useRef(null);
   const reduced = usePrefersReducedMotion();
@@ -58,10 +49,6 @@ export function useReveal({ threshold = 0.15, rootMargin = "0px 0px -60px 0px" }
   return { ref, visible };
 }
 
-/**
- * Counts from zero up to a target. Uses an ease-out curve so it decelerates
- * into the final value instead of stopping dead.
- */
 export function useCountUp(target, { duration = 900, decimals = 0, start = true } = {}) {
   const reduced = usePrefersReducedMotion();
   const [value, setValue] = useState(reduced || !start ? target : 0);
@@ -73,13 +60,12 @@ export function useCountUp(target, { duration = 900, decimals = 0, start = true 
       return;
     }
 
-    const from = 0;
     const startedAt = performance.now();
 
     function tick(now) {
       const progress = Math.min(1, (now - startedAt) / duration);
       const eased = 1 - Math.pow(1 - progress, 3);
-      setValue(from + (target - from) * eased);
+      setValue(target * eased);
       if (progress < 1) frame.current = requestAnimationFrame(tick);
     }
 

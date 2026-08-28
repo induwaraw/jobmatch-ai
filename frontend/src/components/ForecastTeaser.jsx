@@ -17,11 +17,6 @@ function trendKey(row) {
   return "stable";
 }
 
-/**
- * A compact preview of the demand dashboard for the homepage. Shows the six
- * areas ranked by their twelve month projected change, so the second model is
- * visible on the front page without the visitor having to sign in.
- */
 export default function ForecastTeaser() {
   const [rows, setRows] = useState(null);
 

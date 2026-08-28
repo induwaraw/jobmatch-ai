@@ -33,6 +33,15 @@ class UserLogin(BaseModel):
     password: str
 
 
+class UserUpdate(BaseModel):
+    full_name: str = Field(min_length=1, max_length=150)
+
+
+class DeletionResult(BaseModel):
+    detail: str
+    deleted_cvs: int
+
+
 class UserOut(BaseModel):
     """A user as returned by the API. Note there is no password_hash here."""
 

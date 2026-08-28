@@ -29,10 +29,6 @@ import { api, errorMessage } from "../lib/api";
 
 const HORIZONS = [6, 12];
 
-/**
- * The three states a user actually cares about. The API says rising, stable or
- * declining, and "cooling" is the friendlier word for the last one.
- */
 const TRENDS = {
   rising: { label: "Rising", icon: TrendingUp, text: "text-brand", chart: colors.brand },
   stable: { label: "Stable", icon: Minus, text: "text-muted", chart: colors.muted },
@@ -58,7 +54,6 @@ function trendKey(horizonRow) {
   return "stable";
 }
 
-/** Turn a percentage into a word a person would use. */
 function magnitude(pct) {
   const size = Math.abs(pct ?? 0);
   if (size < 0.5) return "barely";
@@ -67,7 +62,6 @@ function magnitude(pct) {
   return "sharply";
 }
 
-/** The plain English sentence under each area. */
 function takeaway(name, horizonRow, months) {
   const pct = horizonRow?.pct_change ?? 0;
   const key = trendKey(horizonRow);
@@ -116,8 +110,6 @@ function AreaCard({ entry, months, selected, onToggleCompare }) {
         </h3>
         <TrendBadge trend={key} />
       </div>
-
-      {/* The number that leads is the change, not the index */}
       <p className={`mt-4 font-display text-[2.25rem] font-semibold leading-none ${style.text}`}>
         {formatPct(row?.pct_change)}
       </p>
@@ -126,8 +118,6 @@ function AreaCard({ entry, months, selected, onToggleCompare }) {
       <p className="mt-4 text-[0.95rem] leading-relaxed text-ink">
         {takeaway(entry.subcategory, row, months)}
       </p>
-
-      {/* Raw index values, small and clearly secondary */}
       <p
         className="mt-4 border-t border-line pt-4 text-sm text-muted"
         title="Index relative to a 2015 baseline, higher means more demand"
@@ -149,7 +139,6 @@ function AreaCard({ entry, months, selected, onToggleCompare }) {
   );
 }
 
-/** Label drawn at the open end of each bar, flipping side for negatives. */
 function ValueLabel({ x, y, width, height, value }) {
   const negative = value < 0;
   const tx = negative ? x - 8 : x + width + 8;
@@ -268,7 +257,6 @@ export default function Forecast() {
 
       {data && (
         <>
-          {/* Controls */}
           <Card className="mt-10 p-4 sm:p-5">
             <div className="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between lg:gap-8">
               <div>
@@ -372,8 +360,6 @@ export default function Forecast() {
               ))}
             </div>
           )}
-
-          {/* Comparison */}
           {compare.length > 0 && (
             <Card className="mt-8 p-6 sm:p-7">
               <div className="flex flex-wrap items-start justify-between gap-4">
@@ -441,8 +427,6 @@ export default function Forecast() {
               </div>
             </Card>
           )}
-
-          {/* Ranking chart */}
           <Card className="mt-8 p-6 sm:p-7">
             <h2 className="font-display text-lg font-semibold text-ink">
               Projected change in demand, next {months} months
@@ -502,8 +486,6 @@ export default function Forecast() {
               </ResponsiveContainer>
             </div>
           </Card>
-
-          {/* How to read this, tucked away */}
           <Card className="mt-6">
             <button
               type="button"
