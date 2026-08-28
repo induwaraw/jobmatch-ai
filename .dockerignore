@@ -1,0 +1,52 @@
+# Keep the build context small and keep secrets out of the image.
+
+# Secrets. These are gitignored too, but the build context is taken from the
+# working directory, so an uncommitted .env would otherwise be copied in.
+.env
+*.env
+!.env.example
+**/.env
+**/*.env.local
+
+# Version control and tooling
+.git
+.gitignore
+.github
+.vscode
+.idea
+
+# Python environments and caches
+**/.venv
+**/venv
+**/__pycache__
+**/*.py[cod]
+**/*.egg-info
+.pytest_cache
+.mypy_cache
+.ruff_cache
+
+# Node. The frontend stage installs its own dependencies from the lockfile.
+**/node_modules
+**/dist
+**/.vite
+npm-debug.log*
+
+# Scraped and generated data, plus notebooks and model artefacts. None of it
+# is needed to run the service, and some of it is large.
+data
+ml/data
+ml/notebooks
+**/*.pt
+**/*.h5
+**/*.pkl
+**/*.joblib
+**/*.safetensors
+**/*.csv
+!ml/skills/*.json
+
+# Documentation and OS noise
+docs
+*.md
+!README.md
+Thumbs.db
+.DS_Store

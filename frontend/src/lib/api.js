@@ -1,7 +1,10 @@
 import axios from "axios";
 
-export const API_BASE_URL =
-  import.meta.env.VITE_API_BASE_URL || "http://localhost:8000";
+// Empty means every request is relative to whatever host is serving the page,
+// so the same build works on localhost and on the deployed domain with no
+// rebuild. In development Vite proxies /api through to the backend on 8000.
+// VITE_API_BASE_URL is still honoured for pointing at a different API.
+export const API_BASE_URL = import.meta.env.VITE_API_BASE_URL ?? "";
 
 export const TOKEN_STORAGE_KEY = "jobmatch.token";
 
@@ -51,7 +54,7 @@ export function errorMessage(error, fallback = "Something went wrong.") {
   }
 
   if (error?.code === "ERR_NETWORK") {
-    return "Cannot reach the server. Is the backend running on port 8000?";
+    return "Cannot reach the server. Please check your connection and try again.";
   }
 
   return fallback;

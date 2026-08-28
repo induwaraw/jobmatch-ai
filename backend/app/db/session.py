@@ -9,10 +9,16 @@ from sqlalchemy.orm import DeclarativeBase, sessionmaker
 
 from app.core.config import settings
 
-# pool_pre_ping avoids handing out connections that MySQL has already dropped
+# pool_pre_ping avoids handing out connections that MySQL has already dropped,
+# which matters more against a managed database than a local one. pool_recycle
+# closes connections before a cloud provider's idle timeout can kill them
+# underneath us. The URL and the TLS arguments both come from settings so that
+# a plain mysql:// value from the host works without being edited by hand.
 engine = create_engine(
-    settings.DATABASE_URL,
+    settings.sqlalchemy_url,
     pool_pre_ping=True,
+    pool_recycle=280,
+    connect_args=settings.db_connect_args,
     future=True,
 )
 

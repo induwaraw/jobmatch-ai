@@ -1,0 +1,12 @@
+# Optional machine learning dependencies for the trained DistilBERT classifier.
+#
+# These are deliberately kept out of requirements.txt. The backend runs fine
+# without them: app/services/classifier.py imports transformers lazily and
+# falls back to a skills based heuristic when the import fails or when
+# CLASSIFIER_MODEL_PATH is unset.
+#
+# The Dockerfile installs these with PyTorch's CPU index, so no CUDA payload is
+# pulled in. Build with --build-arg INSTALL_ML=false to skip them entirely.
+
+torch==2.5.1
+transformers==4.46.3
